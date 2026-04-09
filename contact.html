@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们 - 龙溪企服 LongC-ES</title>
+    <meta name="description" content="联系厦门龙溪传芳企业服务有限公司，获取专业的招商运营和企业服务咨询">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-cn">龙溪企服</span>
+                    <span class="logo-en">LongC-ES</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="about.html">关于我们</a></li>
+                <li><a href="investment.html">招商运营</a></li>
+                <li><a href="services.html">企业服务</a></li>
+                <li><a href="contact.html" class="active">联系我们</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面标题 -->
+    <section class="page-header">
+        <div class="container">
+            <h1>联系我们</h1>
+            <p class="breadcrumb"><a href="index.html">首页</a> / 联系我们</p>
+        </div>
+    </section>
+
+    <!-- 联系信息 -->
+    <section class="contact-info-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>联系方式</h2>
+                <p>欢迎随时与我们联系，我们将竭诚为您服务</p>
+            </div>
+            <div class="contact-cards">
+                <div class="contact-card">
+                    <div class="contact-icon-large">📍</div>
+                    <h3>公司地址</h3>
+                    <p>厦门市同安区龙溪商务中心</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon-large">📞</div>
+                    <h3>联系电话</h3>
+                    <p>177-5058-7110</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon-large">🏢</div>
+                    <h3>公司名称</h3>
+                    <p>厦门龙溪传芳企业服务有限公司</p>
+                    <p class="contact-sub">龙溪企服 LongC-ES</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 地图和表单 -->
+    <section class="contact-main">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- 地图 -->
+                <div class="map-section">
+                    <h3>我们的位置</h3>
+                    <div class="map-container">
+                        <iframe 
+                            src="https://map.baidu.com/search/%E5%8E%A6%E9%97%A8%E5%B8%82%E5%90%8C%E5%AE%89%E5%8C%BA%E9%BE%99%E6%BA%AA%E5%95%86%E5%8A%A1%E4%B8%AD%E5%BF%83"
+                            width="100%" 
+                            height="400" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy"
+                            title="公司位置地图">
+                        </iframe>
+                    </div>
+                    <div class="map-fallback">
+                        <div class="map-placeholder">
+                            <span>🗺️</span>
+                            <p>厦门市同安区龙溪商务中心</p>
+                            <a href="https://map.baidu.com/search/厦门市同安区龙溪商务中心" target="_blank" class="btn btn-secondary">在地图中查看</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 咨询表单 -->
+                <div class="form-section">
+                    <h3>在线咨询</h3>
+                    <p class="form-desc">填写以下表单，我们会尽快与您联系</p>
+                    <form class="contact-form" action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">您的姓名 <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" required placeholder="请输入您的姓名">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">联系电话 <span class="required">*</span></label>
+                            <input type="tel" id="phone" name="phone" required placeholder="请输入您的电话号码">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">电子邮箱</label>
+                            <input type="email" id="email" name="email" placeholder="请输入您的邮箱（选填）">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">咨询业务 <span class="required">*</span></label>
+                            <select id="service" name="service" required>
+                                <option value="">请选择咨询业务</option>
+                                <option value="investment">招商运营服务</option>
+                                <option value="accounting">财务代理记账</option>
+                                <option value="registration">工商注册</option>
+                                <option value="other">其他企业服务</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">咨询内容</label>
+                            <textarea id="message" name="message" rows="4" placeholder="请简要描述您的需求..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-large btn-full">提交咨询</button>
+                    </form>
+                    <div class="form-note">
+                        <p>📌 提示：提交表单后，我们会尽快通过电话与您联系</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 服务时间 -->
+    <section class="business-hours">
+        <div class="container">
+            <div class="hours-content">
+                <h3>服务时间</h3>
+                <div class="hours-grid">
+                    <div class="hours-item">
+                        <span class="days">周一至周五</span>
+                        <span class="time">09:00 - 18:00</span>
+                    </div>
+                    <div class="hours-item">
+                        <span class="days">周六</span>
+                        <span class="time">09:00 - 12:00</span>
+                    </div>
+                    <div class="hours-item">
+                        <span class="days">周日</span>
+                        <span class="time">休息</span>
+                    </div>
+                </div>
+                <p class="hours-note">如有紧急情况，欢迎随时致电咨询</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见问题 -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>常见问题</h2>
+                <p>关于我们服务的常见疑问解答</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q">Q:</span>
+                        <span>工商注册需要准备哪些材料？</span>
+                    </div>
+                    <div class="faq-answer">
+                        <span class="faq-a">A:</span>
+                        <span>一般需要准备：法人身份证、股东身份证、公司名称、注册资本、经营范围、注册地址证明等。具体材料会根据公司类型有所不同，我们可以提供详细清单并协助准备。</span>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q">Q:</span>
+                        <span>财务代理记账包含哪些服务？</span>
+                    </div>
+                    <div class="faq-answer">
+                        <span class="faq-a">A:</span>
+                        <span>我们的代理记账服务包括：日常账务处理、凭证编制、财务报表、纳税申报、发票管理、税务咨询、年度汇算清缴、工商年报等，全面覆盖企业财务需求。</span>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q">Q:</span>
+                        <span>招商运营服务如何收费？</span>
+                    </div>
+                    <div class="faq-answer">
+                        <span class="faq-a">A:</span>
+                        <span>招商运营服务收费根据项目规模、服务内容等因素确定。我们提供灵活的收费模式，可以是固定服务费，也可以是按成交租金比例收取。具体方案欢迎来电咨询。</span>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q">Q:</span>
+                        <span>服务区域有哪些？</span>
+                    </div>
+                    <div class="faq-answer">
+                        <span class="faq-a">A:</span>
+                        <span>我们主要服务厦门地区，特别是同安区及周边区域。对于招商运营业务，我们专注于同安区的写字楼和商业体。企业服务业务可覆盖整个厦门市。</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>期待与您的合作</h2>
+                <p>无论您是需要招商运营服务还是企业服务，我们都将竭诚为您服务</p>
+                <div class="cta-contact">
+                    <div class="cta-item">
+                        <span class="cta-label">电话</span>
+                        <span class="cta-value">177-5058-7110</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-cn">龙溪企服</span>
+                        <span class="logo-en">LongC-ES</span>
+                    </div>
+                    <p class="footer-desc">厦门龙溪传芳企业服务有限公司，专业提供写字楼商业体招商运营、财务代理记账、工商注册等企业服务。</p>
+                </div>
+                <div class="footer-links">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="about.html">关于我们</a></li>
+                        <li><a href="investment.html">招商运营</a></li>
+                        <li><a href="services.html">企业服务</a></li>
+                        <li><a href="contact.html">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>
+                            <span class="contact-icon">📍</span>
+                            <span>厦门市同安区龙溪商务中心</span>
+                        </li>
+                        <li>
+                            <span class="contact-icon">📞</span>
+                            <span>177-5058-7110</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 厦门龙溪传芳企业服务有限公司 版权所有 | 龙溪企服 LongC-ES</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

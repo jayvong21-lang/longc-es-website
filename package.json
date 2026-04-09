@@ -1,0 +1,12 @@
+{
+  "name": "longc-es-website",
+  "version": "1.0.0",
+  "description": "厦门龙溪传芳企业服务有限公司官网",
+  "scripts": {
+    "dev": "echo 'This is a static site'",
+    "build": "echo 'Build complete'"
+  },
+  "keywords": ["企业服务", "招商运营", "财务代理", "工商注册"],
+  "author": "龙溪企服 LongC-ES",
+  "license": "MIT"
+}
