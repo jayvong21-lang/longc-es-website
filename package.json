@@ -1,12 +1,31 @@
 {
-  "name": "longc-es-website",
+  "name": "longxi-company-website",
   "version": "1.0.0",
-  "description": "厦门龙溪传芳企业服务有限公司官网",
+  "description": "厦门龙溪传芳企业服务有限公司官方网站",
+  "main": "index.html",
   "scripts": {
-    "dev": "echo 'This is a static site'",
-    "build": "echo 'Build complete'"
+    "start": "open index.html",
+    "test": "echo \"No tests specified\"",
+    "build": "echo \"Static website, no build required\""
   },
-  "keywords": ["企业服务", "招商运营", "财务代理", "工商注册"],
-  "author": "龙溪企服 LongC-ES",
-  "license": "MIT"
+  "keywords": [
+    "厦门企业服务",
+    "写字楼运营",
+    "招商规划",
+    "公司注册",
+    "代理记账",
+    "办公设备租赁"
+  ],
+  "author": "厦门龙溪传芳企业服务有限公司",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/<username>/longxi-company-website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/<username>/longxi-company-website/issues"
+  },
+  "homepage": "https://<username>.github.io/longxi-company-website",
+  "devDependencies": {},
+  "dependencies": {}
 }

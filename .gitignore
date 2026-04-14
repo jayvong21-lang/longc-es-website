@@ -1,0 +1,57 @@
+# 忽略日志文件
+*.log
+
+# 忽略临时文件
+*.tmp
+*.temp
+
+# 忽略开发环境文件
+.env
+.env.local
+.env.development
+.env.production
+
+# 忽略IDE配置文件
+.vscode/
+.idea/
+
+# 忽略操作系统文件
+.DS_Store
+Thumbs.db
+
+# 忽略缓存文件
+node_modules/
+npm-debug.log*
+
+# 忽略构建输出文件
+dist/
+build/
+*.min.js
+*.min.css
+
+# 忽略测试文件
+__pycache__/
+*.pyc
+
+# 忽略数据库文件
+*.sqlite
+*.sqlite3
+
+# 忽略备份文件
+*.bak
+*.backup
+
+# 忽略上传文件
+uploads/
+
+# 忽略敏感信息文件
+secrets/
+config.json
+
+# 忽略图片原始文件（建议保留压缩后的版本）
+images/raw/
+images/original/
+
+# 忽略文档草稿
+drafts/
+templates/

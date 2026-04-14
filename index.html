@@ -1,196 +1,247 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>龙溪企服 LongC-ES | 厦门龙溪传芳企业服务有限公司</title>
-    <meta name="description" content="龙溪企服专业提供写字楼商业体招商运营、财务代理记账、工商注册等企业服务">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>厦门龙溪传芳企业服务有限公司</title>
+    <meta name="description" content="厦门龙溪传芳企业服务有限公司专注于写字楼运营管理、办公与商业招商规划、公司注册、代理记账、办公设备租赁等一站式企业服务，为企业提供全方位的商业解决方案">
+    <meta name="keywords" content="厦门企业服务,写字楼运营,招商规划,公司注册,代理记账,办公设备租赁">
+    <meta name="author" content="厦门龙溪传芳企业服务有限公司">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 <body>
-    <!-- 导航栏 -->
-    <nav class="navbar">
+    <!-- Header -->
+    <header>
         <div class="container">
-            <div class="logo">
-                <a href="index.html">
-                    <span class="logo-cn">龙溪企服</span>
-                    <span class="logo-en">LongC-ES</span>
-                </a>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="active">首页</a></li>
-                <li><a href="about.html">关于我们</a></li>
-                <li><a href="investment.html">招商运营</a></li>
-                <li><a href="services.html">企业服务</a></li>
-                <li><a href="contact.html">联系我们</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <nav>
+                <div class="logo">
+                    <div class="logo-img">
+                        <img src="images/logo.png" alt="龙溪企服logo">
+                    </div>
+                    <span>厦门龙溪传芳企业服务有限公司</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#home">首页</a>
+                    <a href="#services">服务项目</a>
+                    <a href="#projects">项目案例</a>
+                    <a href="#team">团队介绍</a>
+                    <a href="#contact">联系我们</a>
+                </div>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <!-- 首页 Banner -->
-    <section class="hero">
-        <div class="hero-overlay"></div>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
         <div class="container">
-            <div class="hero-content">
-                <h1>专业服务 · 助力企业发展</h1>
-                <p class="hero-subtitle">写字楼商业体招商运营 | 财务代理记账 | 工商注册</p>
-                <div class="hero-buttons">
-                    <a href="investment.html" class="btn btn-primary">招商运营</a>
-                    <a href="services.html" class="btn btn-secondary">企业服务</a>
+            <h1>专业企业服务，助力商业成长</h1>
+            <p>厦门龙溪传芳企业服务有限公司专注于写字楼运营管理、办公与商业招商规划、公司注册、代理记账、办公设备租赁等一站式企业服务，为企业提供全方位的商业解决方案。</p>
+            <a href="#contact" class="cta-button">立即咨询</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">核心业务</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="service-title">写字楼运营管理</h3>
+                    <p class="service-description">专业写字楼运营团队，提供物业管理、租户服务、设施维护、安全管理等全方位运营解决方案。</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="service-title">办公与商业招商规划</h3>
+                    <p class="service-description">基于市场调研与数据分析，制定科学的招商策略，帮助企业快速实现商业空间的价值最大化。</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3 class="service-title">公司注册与代理记账</h3>
+                    <p class="service-description">一站式工商注册服务，专业财税团队提供记账、报税、审计等全套财务解决方案。</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3 class="service-title">办公设备租赁</h3>
+                    <p class="service-description">提供办公家具、IT设备、会议设施等租赁服务，帮助企业降低初期投入成本。</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 核心业务 -->
-    <section class="business-section">
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
         <div class="container">
-            <div class="section-header">
-                <h2>核心业务</h2>
-                <p>为企业提供全方位的专业服务解决方案</p>
-            </div>
-            <div class="business-grid">
-                <div class="business-card">
-                    <div class="business-icon">
-                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="8" y="16" width="48" height="40" rx="2" stroke="#1e3a5f" stroke-width="2"/>
-                            <path d="M20 28h24M20 36h24M20 44h16" stroke="#1e3a5f" stroke-width="2" stroke-linecap="round"/>
-                            <path d="M32 8v8M24 12h16" stroke="#1e3a5f" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
+            <h2 class="section-title">项目案例</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('images/qudian-project.jpg');"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">趣店环东中心项目</h3>
+                        <p class="project-description">厦门同安环东新城核心区域，总建筑面积6万㎡，打造集办公、酒店、孵化、服务于一体的复合型产业社区。</p>
+                        <div class="project-details">
+                            <p><strong>合作模式：</strong>甲方投场地装修，乙方输出运营管理</p>
+                            <p><strong>收益分配：</strong>总收入5%管理费 + 新增客户2.5个月首租绩效</p>
+                        </div>
                     </div>
-                    <h3>招商运营</h3>
-                    <p>专业写字楼、商业体招商运营服务，精准匹配企业需求，提升物业价值</p>
-                    <a href="investment.html" class="link-arrow">了解详情 →</a>
                 </div>
-                <div class="business-card">
-                    <div class="business-icon">
-                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="32" cy="32" r="24" stroke="#1e3a5f" stroke-width="2"/>
-                            <path d="M32 20v12l8 8" stroke="#1e3a5f" stroke-width="2" stroke-linecap="round"/>
-                            <path d="M20 32h4M40 32h4M32 20v-4M32 48v-4" stroke="#1e3a5f" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
+                
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('images/xiamen-office.jpg');"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">厦门空港综保区招商运营</h3>
+                        <p class="project-description">为厦门空港综保区提供招商规划与运营管理服务，助力区域产业升级与经济发展。</p>
+                        <div class="project-details">
+                            <p><strong>服务内容：</strong>招商策略制定、企业入驻服务、园区运营管理</p>
+                            <p><strong>目标客户：</strong>跨境贸易、航空维修、保税加工等规上企业</p>
+                        </div>
                     </div>
-                    <h3>财务代理</h3>
-                    <p>专业财务代理记账服务，合规纳税，让企业财务管理更轻松</p>
-                    <a href="services.html" class="link-arrow">了解详情 →</a>
                 </div>
-                <div class="business-card">
-                    <div class="business-icon">
-                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="12" y="8" width="40" height="48" rx="2" stroke="#1e3a5f" stroke-width="2"/>
-                            <path d="M20 20h24M20 28h24M20 36h16" stroke="#1e3a5f" stroke-width="2" stroke-linecap="round"/>
-                            <circle cx="42" cy="44" r="4" stroke="#1e3a5f" stroke-width="2"/>
-                            <path d="M46 48l6 6" stroke="#1e3a5f" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
+                
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('images/business-park.jpg');"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">产业园运营合作</h3>
+                        <p class="service-description">与多家产业园合作，提供专业招商运营服务，实现园区价值最大化。</p>
+                        <div class="project-details">
+                            <p><strong>合作园区：</strong>美峰创谷、银城智谷、环东云谷、集美电子城</p>
+                            <p><strong>服务成果：</strong>入驻率提升、租金收入增长、园区品牌价值提升</p>
+                        </div>
                     </div>
-                    <h3>工商注册</h3>
-                    <p>一站式工商注册服务，快速办理营业执照，助力企业顺利开业</p>
-                    <a href="services.html" class="link-arrow">了解详情 →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 公司优势 -->
-    <section class="advantages-section">
+    <!-- Team Section -->
+    <section class="team" id="team">
         <div class="container">
-            <div class="section-header light">
-                <h2>为什么选择我们</h2>
-                <p>多年行业经验，专业团队服务</p>
-            </div>
-            <div class="advantages-grid">
-                <div class="advantage-item">
-                    <div class="advantage-number">01</div>
-                    <h3>专业团队</h3>
-                    <p>拥有经验丰富的专业团队，熟悉行业政策法规</p>
+            <h2 class="section-title">团队核心</h2>
+            <div class="team-member">
+                <div class="team-photo">
+                    <img src="images/team-member.jpg" alt="黄骏骅">
                 </div>
-                <div class="advantage-item">
-                    <div class="advantage-number">02</div>
-                    <h3>高效服务</h3>
-                    <p>流程标准化，响应迅速，为客户节省宝贵时间</p>
-                </div>
-                <div class="advantage-item">
-                    <div class="advantage-number">03</div>
-                    <h3>本地资源</h3>
-                    <p>深耕厦门同安地区，拥有丰富的本地商业资源</p>
-                </div>
-                <div class="advantage-item">
-                    <div class="advantage-number">04</div>
-                    <h3>全程跟踪</h3>
-                    <p>从咨询到交付，全程跟踪服务，确保客户满意</p>
-                </div>
+                <h3 class="team-name">黄骏骅</h3>
+                <p class="team-position">公司负责人 & 厦门空港综保区招商经理</p>
+                <p class="team-bio">拥有多年商业地产运营与企业服务经验，深耕写字楼运营管理领域，成功运营多个商业项目。擅长招商策略制定、企业服务资源整合，为企业提供一站式解决方案。</p>
             </div>
         </div>
     </section>
 
-    <!-- 联系我们 CTA -->
-    <section class="cta-section">
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
         <div class="container">
-            <div class="cta-content">
-                <h2> ready to start?</h2>
-                <p>立即联系我们，获取专业企业咨询服务</p>
-                <div class="cta-contact">
-                    <div class="cta-item">
-                        <span class="cta-label">电话</span>
-                        <span class="cta-value">177-5058-7110</span>
-                    </div>
-                    <div class="cta-item">
-                        <span class="cta-label">地址</span>
-                        <span class="cta-value">厦门市同安区龙溪商务中心</span>
-                    </div>
+            <h2 class="section-title">联系我们</h2>
+            <p>欢迎咨询我们的服务，我们将为您提供专业的企业服务解决方案。</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>电话：请通过钉钉联系</span>
                 </div>
-                <a href="contact.html" class="btn btn-primary btn-large">联系我们</a>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>邮箱：huang@longxi-group.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>地址：厦门市（具体地址待补充）</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-dingtalk"></i>
+                    <span>钉钉应用：虾秘书（App ID: 75bf8485-2300-4fc2-b6aa-f459348895a2）</span>
+                </div>
             </div>
+            
+            <a href="#contact" class="cta-button" style="margin-top: 30px;">获取专属方案</a>
         </div>
     </section>
 
-    <!-- 页脚 -->
-    <footer class="footer">
+    <!-- Footer -->
+    <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <span class="logo-cn">龙溪企服</span>
-                        <span class="logo-en">LongC-ES</span>
-                    </div>
-                    <p class="footer-desc">厦门龙溪传芳企业服务有限公司，专业提供写字楼商业体招商运营、财务代理记账、工商注册等企业服务。</p>
-                </div>
-                <div class="footer-links">
-                    <h4>快速链接</h4>
-                    <ul>
-                        <li><a href="index.html">首页</a></li>
-                        <li><a href="about.html">关于我们</a></li>
-                        <li><a href="investment.html">招商运营</a></li>
-                        <li><a href="services.html">企业服务</a></li>
-                        <li><a href="contact.html">联系我们</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4>联系方式</h4>
-                    <ul>
-                        <li>
-                            <span class="contact-icon">📍</span>
-                            <span>厦门市同安区龙溪商务中心</span>
-                        </li>
-                        <li>
-                            <span class="contact-icon">📞</span>
-                            <span>177-5058-7110</span>
-                        </li>
-                    </ul>
-                </div>
+            <div class="footer-links">
+                <a href="#home">首页</a>
+                <a href="#services">服务项目</a>
+                <a href="#projects">项目案例</a>
+                <a href="#team">团队介绍</a>
+                <a href="#contact">联系我们</a>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 厦门龙溪传芳企业服务有限公司 版权所有 | 龙溪企服 LongC-ES</p>
-            </div>
+            <p class="copyright">© 2026 厦门龙溪传芳企业服务有限公司. 保留所有权利.</p>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script>
+        // 导航平滑滚动
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // 图片加载备用方案
+        const imagePlaceholders = document.querySelectorAll('.project-image');
+        imagePlaceholders.forEach(img => {
+            // 如果图片加载失败，使用备用背景色
+            img.style.backgroundColor = '#e6e9f0';
+        });
+
+        // 卡片动画效果
+        const serviceCards = document.querySelectorAll('.service-card');
+        serviceCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px)';
+                card.style.boxShadow = '0 15px 40px rgba(0,0,0,0.15)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+                card.style.boxShadow = '0 10px 30px rgba(0,0,0,0.08)';
+            });
+        });
+
+        // 表单提交处理（示例）
+        document.querySelector('.cta-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('感谢您的咨询！我们将尽快与您联系。');
+        });
+
+        // 响应式导航菜单
+        const navLinks = document.querySelector('.nav-links');
+        const logo = document.querySelector('.logo');
+        
+        function adjustNavForMobile() {
+            if (window.innerWidth <= 768) {
+                logo.style.flexDirection = 'column';
+                logo.style.alignItems = 'center';
+                logo.style.marginBottom = '20px';
+            } else {
+                logo.style.flexDirection = 'row';
+                logo.style.alignItems = 'center';
+                logo.style.marginBottom = '0';
+            }
+        }
+        
+        window.addEventListener('resize', adjustNavForMobile);
+        adjustNavForMobile();
+    </script>
 </body>
 </html>
