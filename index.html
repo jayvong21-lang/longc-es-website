@@ -23,45 +23,12 @@
                     <span>厦门龙溪传芳企业服务有限公司</span>
                 </div>
                 <div class="nav-links">
-                    <a href="#home">首页</a>
-                    
-                    <!-- 企业概况下拉菜单 -->
-                    <div class="dropdown">
-                        <a href="#company-profile" class="dropdown-toggle">企业概况</a>
-                        <div class="dropdown-content">
-                            <a href="#company-introduction">企业简介</a>
-                            <a href="#business-scope">经营范围</a>
-                            <a href="#company-culture">企业文化</a>
-                            <a href="#service-concept">服务理念</a>
-                        </div>
-                    </div>
-                    
-                    <!-- 产品服务下拉菜单 -->
-                    <div class="dropdown">
-                        <a href="#product-services" class="dropdown-toggle">产品服务</a>
-                        <div class="dropdown-content">
-                            <!-- 办公项目 -->
-                            <div class="dropdown-submenu">
-                                <a href="#office-projects">办公项目</a>
-                                <div class="dropdown-subcontent">
-                                    <a href="#longxi-center">龙溪商务中心</a>
-                                    <a href="#meifeng-hemei">美峰创谷-合美大厦</a>
-                                </div>
-                            </div>
-                            <!-- 企业服务 -->
-                            <div class="dropdown-submenu">
-                                <a href="#enterprise-services">企业服务</a>
-                                <div class="dropdown-subcontent">
-                                    <a href="#investment-agent">招商代理</a>
-                                    <a href="#financial-agent">财务代理</a>
-                                    <a href="#decoration-design">装修设计</a>
-                                    <a href="#policy-consulting">政策咨询</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <a href="#business-cooperation">业务合作</a>
+                    <a href="index.html">首页</a>
+                    <a href="company-profile.html">企业概况</a>
+                    <a href="product-services.html">产品服务</a>
+                    <a href="news-center.html">资讯中心</a>
+                    <a href="enterprises.html">入驻企业</a>
+                    <a href="join.html">立即入驻</a>
                 </div>
             </nav>
         </div>
@@ -73,7 +40,7 @@
             <h1>专业企业服务，助力商业成长</h1>
             <p>厦门龙溪传芳企业服务有限公司专注于写字楼运营管理、办公与商业招商规划、公司注册、代理记账、办公设备租赁等一站式企业服务，为企业提供全方位的商业解决方案。</p>
             <a href="#contact" class="cta-button">立即咨询</a>
-        </div>
+        </divisions>
     </section>
 
     <!-- Services Section -->
@@ -182,7 +149,7 @@
                 <div class="timeline-item">
                     <div class="timeline-year">2017年</div>
                     <div class="timeline-content">
-                        <h3>建设完成“龙溪商务中心”，形成了从孵化器助长成长、加速器茁壮成长到产业基地育树成林的生态链</h3>
+                        <h3>建设完成"龙溪商务中心"，形成了从孵化器助长成长、加速器茁壮成长到产业基地育树成林的生态链</h3>
                         <p>龙溪商务中心建成，形成了从孵化器助长成长、加速器茁壮成长到产业基地育树成林的完整生态链。</p>
                     </div>
                 </div>
@@ -259,7 +226,7 @@
 
     <script>
         // 导航平滑滚动
-        document.querySelectorAll('.nav-links a, .dropdown-content a, .dropdown-subcontent a').forEach(link => {
+        document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
