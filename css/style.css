@@ -710,7 +710,375 @@ img {
 }
 
 /* ============================================
-   招商运营页面
+   企业概况页面
+   ============================================ */
+.company-intro {
+    padding: var(--section-padding) 0;
+}
+
+.company-intro .intro-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.company-intro h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--gray-800);
+    margin-bottom: 20px;
+}
+
+.company-intro .lead {
+    font-size: 20px;
+    color: var(--gray-600);
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.company-intro p {
+    font-size: 16px;
+    color: var(--gray-600);
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.business-scope {
+    padding: var(--section-padding) 0;
+    background: var(--gray-50);
+}
+
+.business-scope h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--gray-800);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.business-scope > p {
+    font-size: 16px;
+    color: var(--gray-600);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.scope-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.scope-item {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    transition: var(--transition);
+    border: 1px solid var(--gray-200);
+}
+
+.scope-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border-color: var(--primary-color);
+}
+
+.scope-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scope-icon i {
+    font-size: 24px;
+    color: var(--white);
+}
+
+.scope-item h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--gray-800);
+    margin-bottom: 15px;
+}
+
+.scope-item p {
+    font-size: 14px;
+    color: var(--gray-600);
+    line-height: 1.6;
+}
+
+.company-culture {
+    padding: var(--section-padding) 0;
+}
+
+.company-culture h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--gray-800);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.company-culture p {
+    font-size: 16px;
+    color: var(--gray-600);
+    margin-bottom: 15px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.logo-explanation {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-top: 40px;
+    background: var(--gray-50);
+    padding: 40px;
+    border-radius: 8px;
+}
+
+.logo-explanation .logo-img {
+    width: 200px;
+    height: 200px;
+    flex-shrink: 0;
+}
+
+.logo-explanation .logo-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.logo-explanation .logo-text {
+    flex: 1;
+}
+
+.logo-explanation .logo-text h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--gray-800);
+    margin-bottom: 15px;
+}
+
+.logo-explanation .logo-text p {
+    font-size: 16px;
+    color: var(--gray-600);
+    line-height: 1.8;
+}
+
+.service-concept {
+    padding: var(--section-padding) 0;
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.service-concept h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.service-concept .concept-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.service-concept .highlight {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.service-concept p {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-bottom: 15px;
+}
+
+/* ============================================
+   产品服务页面
+   ============================================ */
+.tongan-base {
+    padding: var(--section-padding) 0;
+}
+
+.tongan-base h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--gray-800);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.base-info {
+    max-width: 900px;
+    margin: 0 auto 40px;
+}
+
+.base-info p {
+    font-size: 16px;
+    color: var(--gray-600);
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.product-section {
+    margin-bottom: 60px;
+}
+
+.product-section h3 {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--gray-800);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+}
+
+.product-content {
+    background: var(--gray-50);
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.product-content p {
+    font-size: 16px;
+    color: var(--gray-600);
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.product-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.detail-item {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--gray-200);
+}
+
+.detail-item h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--gray-800);
+    margin-bottom: 10px;
+}
+
+.detail-item p {
+    font-size: 14px;
+    color: var(--gray-600);
+    line-height: 1.6;
+}
+
+.commercial-details {
+    margin-top: 30px;
+}
+
+.commercial-details h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--gray-800);
+    margin-bottom: 15px;
+}
+
+.commercial-details ul {
+    list-style: none;
+}
+
+.commercial-details li {
+    font-size: 14px;
+    color: var(--gray-600);
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.commercial-details li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+.enterprise-services {
+    padding: var(--section-padding) 0;
+    background: var(--gray-50);
+}
+
+.enterprise-services h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--gray-800);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+}
+
+.service-item {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid var(--gray-200);
+    transition: var(--transition);
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border-color: var(--primary-color);
+}
+
+.service-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-icon i {
+    font-size: 24px;
+    color: var(--white);
+}
+
+.service-item h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--gray-800);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.service-item p {
+    font-size: 14px;
+    color: var(--gray-600);
+    line-height: 1.6;
+}
+
+/* ============================================
+   资讯中心页面
    ============================================ */
 .service-detail {
     padding: var(--section-padding) 0;
