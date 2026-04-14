@@ -1,257 +1,288 @@
-/**
- * 龙溪企服 LongC-ES 官网 - 主要交互脚本
- */
+// 龙溪企服官方网站JavaScript功能
 
+// 页面加载完成后初始化
 document.addEventListener('DOMContentLoaded', function() {
-    // 移动端菜单切换
-    initMobileMenu();
+    // 初始化导航栏
+    initNavbar();
     
-    // 导航栏滚动效果
-    initNavbarScroll();
+    // 初始化滚动效果
+    initScrollEffects();
     
-    // 平滑滚动
-    initSmoothScroll();
-    
-    // 表单处理
-    initContactForm();
+    // 初始化表单验证
+    initFormValidation();
 });
 
-/**
- * 移动端菜单切换
- */
-function initMobileMenu() {
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
+// 导航栏初始化
+function initNavbar() {
+    const navbar = document.querySelector('.navbar');
+    const navLinks = document.querySelectorAll('.nav-link');
     
-    if (hamburger && navMenu) {
-        hamburger.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-            
-            // 切换汉堡菜单动画
-            const spans = hamburger.querySelectorAll('span');
-            if (navMenu.classList.contains('active')) {
-                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-                spans[1].style.opacity = '0';
-                spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
-            } else {
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
+    // 添加导航链接点击效果
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // 如果是内部链接，平滑滚动
+            const href = this.getAttribute('href');
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                const targetId = href.substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    smoothScrollTo(targetElement);
+                }
             }
+        });
+    });
+    
+    // 滚动时改变导航栏透明度
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+            navbar.style.backgroundColor = '#495057';
+        } else {
+            navbar.style.backgroundColor = '#495057';
+        }
+    });
+}
+
+// 平滑滚动到指定元素
+function smoothScrollTo(element) {
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - 80;
+    
+    window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+    });
+}
+
+// 滚动效果初始化
+function initScrollEffects() {
+    // 卡片动画
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px)';
+            this.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.12)';
         });
         
-        // 点击菜单项后关闭菜单
-        const navLinks = navMenu.querySelectorAll('a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                navMenu.classList.remove('active');
-                const spans = hamburger.querySelectorAll('span');
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
-            });
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.08)';
         });
-    }
-}
-
-/**
- * 导航栏滚动效果
- */
-function initNavbarScroll() {
-    const navbar = document.querySelector('.navbar');
+    });
     
-    if (navbar) {
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) {
-                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
-            } else {
-                navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-            }
+    // 服务卡片动画
+    const serviceCards = document.querySelectorAll('.service-card');
+    serviceCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px)';
+            this.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.12)';
         });
-    }
-}
-
-/**
- * 平滑滚动
- */
-function initSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                e.preventDefault();
-                const navbarHeight = document.querySelector('.navbar').offsetHeight;
-                const targetPosition = targetElement.offsetTop - navbarHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.08)';
         });
     });
 }
 
-/**
- * 联系表单处理
- */
-function initContactForm() {
-    const form = document.querySelector('.contact-form');
-    
-    if (form) {
-        form.addEventListener('submit', function(e) {
+// 表单验证初始化
+function initFormValidation() {
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
             // 获取表单数据
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData.entries());
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const message = document.getElementById('message').value.trim();
             
-            // 简单验证
-            if (!data.name || !data.phone || !data.service) {
-                showNotification('请填写必填项', 'error');
-                return;
+            // 验证表单
+            let isValid = true;
+            
+            // 验证姓名
+            if (!name) {
+                showError('name', '请输入姓名');
+                isValid = false;
+            } else {
+                clearError('name');
             }
             
-            // 验证手机号格式
-            const phoneRegex = /^1[3-9]\d{9}$/;
-            if (!phoneRegex.test(data.phone.replace(/-/g, ''))) {
-                showNotification('请输入正确的手机号码', 'error');
-                return;
+            // 验证邮箱
+            if (!email) {
+                showError('email', '请输入邮箱');
+                isValid = false;
+            } else if (!validateEmail(email)) {
+                showError('email', '请输入有效的邮箱地址');
+                isValid = false;
+            } else {
+                clearError('email');
             }
             
-            // 模拟提交成功
-            showNotification('提交成功！我们会尽快与您联系', 'success');
-            form.reset();
+            // 验证电话
+            if (!phone) {
+                showError('phone', '请输入联系电话');
+                isValid = false;
+            } else if (!validatePhone(phone)) {
+                showError('phone', '请输入有效的电话号码');
+                isValid = false;
+            } else {
+                clearError('phone');
+            }
             
-            // 实际项目中，这里应该发送 AJAX 请求到服务器
-            console.log('表单数据：', data);
+            // 验证留言
+            if (!message) {
+                showError('message', '请输入留言内容');
+                isValid = false;
+            } else {
+                clearError('message');
+            }
+            
+            if (isValid) {
+                // 显示提交成功消息
+                showSuccessMessage();
+                
+                // 重置表单
+                contactForm.reset();
+            }
         });
     }
 }
 
-/**
- * 显示通知
- */
-function showNotification(message, type = 'info') {
-    // 移除已有的通知
-    const existingNotification = document.querySelector('.notification');
-    if (existingNotification) {
-        existingNotification.remove();
+// 验证邮箱格式
+function validateEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.(com|cn|net)$/;
+    return emailRegex.test(email);
+}
+
+// 验证电话号码格式
+function validatePhone(phone) {
+    const phoneRegex = /^1[3-9]\d{9}$|^\d{3}-\d{8}$|^\d{4}-\d{7}$/;
+    return phoneRegex.test(phone);
+}
+
+// 显示错误信息
+function showError(fieldId, message) {
+    const field = document.getElementById(fieldId);
+    const errorDiv = document.getElementById(`${fieldId}-error`);
+    
+    if (errorDiv) {
+        errorDiv.textContent = message;
+        errorDiv.style.display = 'block';
+    } else {
+        const errorElement = document.createElement('div');
+        errorElement.id = `${fieldId}-error`;
+        errorElement.className = 'error-message';
+        errorElement.textContent = message;
+        errorElement.style.color = '#dc3545';
+        errorElement.style.fontSize = '14px';
+        errorElement.style.marginTop = '5px';
+        
+        field.parentNode.appendChild(errorElement);
     }
     
-    // 创建通知元素
-    const notification = document.createElement('div');
-    notification.className = `notification notification-${type}`;
-    notification.innerHTML = `
-        <span class="notification-message">${message}</span>
-        <button class="notification-close">&times;</button>
-    `;
+    field.style.borderColor = '#dc3545';
+}
+
+// 清除错误信息
+function clearError(fieldId) {
+    const field = document.getElementById(fieldId);
+    const errorDiv = document.getElementById(`${fieldId}-error`);
     
-    // 添加样式
-    notification.style.cssText = `
-        position: fixed;
-        top: 100px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: ${type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : '#3b82f6'};
-        color: white;
-        padding: 15px 25px;
-        border-radius: 8px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        z-index: 9999;
-        animation: slideDown 0.3s ease;
-    `;
+    if (errorDiv) {
+        errorDiv.style.display = 'none';
+    }
     
-    // 添加关闭按钮样式
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateX(-50%) translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(-50%) translateY(0);
-            }
-        }
-        .notification-close {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 20px;
-            cursor: pointer;
-            padding: 0;
-            width: 24px;
-            height: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0.8;
-            transition: opacity 0.2s;
-        }
-        .notification-close:hover {
-            opacity: 1;
-        }
-    `;
-    document.head.appendChild(style);
+    field.style.borderColor = '#ced4da';
+}
+
+// 显示成功消息
+function showSuccessMessage() {
+    const successMessage = document.createElement('div');
+    successMessage.id = 'success-message';
+    successMessage.className = 'success-message';
+    successMessage.textContent = '表单提交成功！我们会尽快联系您。';
+    successMessage.style.backgroundColor = '#d4edda';
+    successMessage.style.color = '#155724';
+    successMessage.style.padding = '15px';
+    successMessage.style.borderRadius = '5px';
+    successMessage.style.marginTop = '20px';
+    successMessage.style.textAlign = 'center';
     
-    // 添加到页面
-    document.body.appendChild(notification);
+    const contactForm = document.getElementById('contact-form');
+    contactForm.appendChild(successMessage);
     
-    // 关闭按钮事件
-    notification.querySelector('.notification-close').addEventListener('click', function() {
-        notification.remove();
-    });
-    
-    // 自动关闭
+    // 3秒后移除成功消息
     setTimeout(() => {
-        if (notification.parentNode) {
-            notification.style.animation = 'slideDown 0.3s ease reverse';
-            setTimeout(() => notification.remove(), 300);
+        successMessage.remove();
+    }, 3000);
+}
+
+// 页面滚动到顶部
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// 页面滚动到底部
+function scrollToBottom() {
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth'
+    });
+}
+
+// 切换主题颜色
+function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    if (currentTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'light');
+    } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+}
+
+// 图片懒加载
+function initImageLazyLoad() {
+    const images = document.querySelectorAll('img[data-src]');
+    
+    images.forEach(img => {
+        const src = img.getAttribute('data-src');
+        if (src) {
+            img.setAttribute('src', src);
+            img.removeAttribute('data-src');
         }
-    }, 5000);
-}
-
-/**
- * 页面加载动画
- */
-window.addEventListener('load', function() {
-    document.body.classList.add('loaded');
-});
-
-/**
- * 滚动显示动画
- */
-function initScrollAnimations() {
-    const animatedElements = document.querySelectorAll('.business-card, .culture-card, .service-item, .advantage-item, .client-card, .other-card');
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, {
-        threshold: 0.1
-    });
-    
-    animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
     });
 }
 
-// 如果浏览器支持 IntersectionObserver，启用滚动动画
-if ('IntersectionObserver' in window) {
-    document.addEventListener('DOMContentLoaded', initScrollAnimations);
+// 页面加载进度
+function showLoadingProgress() {
+    const progressBar = document.createElement('div');
+    progressBar.id = 'loading-progress';
+    progressBar.style.position = 'fixed';
+    progressBar.style.top = '0';
+    progressBar.style.left = '0';
+    progressBar.style.width = '0%';
+    progressBar.style.height = '3px';
+    progressBar.style.backgroundColor = '#007bff';
+    progressBar.style.zIndex = '1001';
+    
+    document.body.appendChild(progressBar);
+    
+    // 模拟加载进度
+    let progress = 0;
+    const interval = setInterval(() => {
+        progress += 10;
+        progressBar.style.width = `${progress}%`;
+        
+        if (progress >= 100) {
+            clearInterval(interval);
+            setTimeout(() => {
+                progressBar.remove();
+            }, 500);
+        }
+    }, 100);
 }

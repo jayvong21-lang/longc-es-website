@@ -3,338 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>资讯中心 - 龙溪企服 LongC-ES</title>
-    <meta name="description" content="龙溪企服资讯中心，提供政策文件、企业动态、物业公告、行业动态、招聘求职等信息">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="images/company-logo.jpg" type="image/jpeg">
+    <meta name="description" content="龙溪企服资讯中心 - 最新新闻动态和政策资讯">
+    <meta name="keywords" content="龙溪企服, 新闻动态, 政策资讯, 行业动态">
+    <title>资讯中心 - 龙溪企服</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/logo.png">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">
-                    <div class="logo-img">
-                        <img src="images/company-logo.jpg" alt="龙溪企服logo">
-                    </div>
-                    <span>厦门龙溪传芳企业服务有限公司</span>
-                </div>
-                <div class="nav-links">
-                    <a href="index.html">首页</a>
-                    <a href="company-profile.html">企业概况</a>
-                    <a href="product-services.html">产品服务</a>
-                    <a href="news-center.html" class="active">资讯中心</a>
-                    <a href="enterprises.html">入驻企业</a>
-                    <a href="join.html">立即入驻</a>
-                </div>
-            </nav>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="龙溪企服 Logo" class="logo-img">
+                <div class="logo-text">龙溪企服</div>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">首页</a></li>
+                <li class="nav-item"><a href="company-profile.html" class="nav-link">企业概况</a></li>
+                <li class="nav-item"><a href="product-services.html" class="nav-link">产品服务</a></li>
+                <li class="nav-item"><a href="news-center.html" class="nav-link">资讯中心</a></li>
+                <li class="nav-item"><a href="investment.html" class="nav-link">入驻企业</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">立即入驻</a></li>
+            </ul>
         </div>
-    </header>
+    </nav>
 
-    <!-- Page Header -->
-    <section class="page-header">
+    <!-- 资讯中心横幅 -->
+    <section class="hero">
         <div class="container">
-            <h1>资讯中心</h1>
-            <p class="breadcrumb"><a href="index.html">首页</a> / 资讯中心</p>
+            <h1 class="hero-title">资讯中心</h1>
+            <p class="hero-subtitle">了解最新的新闻动态、政策资讯和行业动态</p>
         </div>
     </section>
 
-    <!-- 资讯分类 -->
-    <section class="news-categories">
+    <!-- 新闻动态 -->
+    <section class="card-section">
         <div class="container">
-            <div class="category-grid">
-                <div class="category-item">
-                    <div class="category-icon">
-                        <i class="fas fa-file-alt"></i>
-                    </div>
-                    <h3>政策文件</h3>
-                    <p>最新的政府政策和行业文件</p>
-                    <a href="#policy-files" class="category-link">查看政策文件</a>
+            <h2 class="card-title">新闻动态</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3 class="card-heading">龙溪商务中心二期项目投入使用</h3>
+                    <p class="card-text">2020年二期项目开始投入使用，园区已初步形成了软件集成电路设计、电子商务、服务外包等产业集群。</p>
+                    <div class="card-date">2020年12月</div>
                 </div>
-                <div class="category-item">
-                    <div class="category-icon">
-                        <i class="fas fa-newspaper"></i>
-                    </div>
-                    <h3>企业动态</h3>
-                    <p>龙溪企服的最新动态和新闻</p>
-                    <a href="#company-dynamic" class="category-link">查看企业动态</a>
+                <div class="card">
+                    <h3 class="card-heading">拿下美峰创谷5号楼</h3>
+                    <p class="card-text">2025年拿下美峰创谷5号楼，3.5万平方写字楼酒店综合体运营，进一步扩大企业服务规模。</p>
+                    <div class="card-date">2025年3月</div>
                 </div>
-                <div class="category-item">
-                    <div class="category-icon">
-                        <i class="fas fa-bell"></i>
-                    </div>
-                    <h3>物业公告</h3>
-                    <p>同安双创基地的物业通知</p>
-                    <a href="#property-announcement" class="category-link">查看物业公告</a>
+                <div class="card">
+                    <h3 class="card-heading">龙溪商务中心正式落地</h3>
+                    <p class="card-text">公司的第一个众创空间项目——"龙溪商务中心"于2020年5月在厦门市同安区湖里工业区正式落地。</p>
+                    <div class="card-date">2020年5月</div>
                 </div>
-                <div class="category-item">
-                    <div class="category-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>行业动态</h3>
-                    <p>企业服务行业的最新动态</p>
-                    <a href="#industry-dynamic" class="category-link">查看行业动态</a>
-                </div>
-                <div class="category-item">
-                    <div class="category-icon">
-                        <i class="fas fa-user-plus"></i>
-                    </div>
-                    <h3>招聘求职</h3>
-                    <p>招聘信息和求职需求</p>
-                    <a href="#recruitment" class="category-link">查看招聘求职</a>
+                <div class="card">
+                    <h3 class="card-heading">一期大厦投入使用</h3>
+                    <p class="card-text">一期大厦1.25万平米正式投入使用，标志着公司正式进入写字楼运营管理领域。</p>
+                    <div class="card-date">2012年8月</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 政策文件 -->
-    <section class="policy-files" id="policy-files">
+    <!-- 政策资讯 -->
+    <section class="service-section">
         <div class="container">
-            <h2>政策文件</h2>
-            <div class="policy-list">
-                <div class="policy-item">
-                    <div class="policy-title">
-                        <h3>关于申报2020年厦门市中小企业管理咨询项目兑现补助的通知</h3>
-                        <span class="policy-date">2020-07-20</span>
-                    </div>
-                    <div class="policy-content">
-                        <p>厦门市中小企业服务中心发布的管理咨询项目兑现补助通知</p>
-                        <a href="http://fwzx.xmsme.cn/html/2020/7/20/2020072011573278751.html" class="policy-link">查看详情</a>
-                    </div>
+            <h2 class="service-title">政策资讯</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3 class="service-heading">厦门市创新创业政策</h3>
+                    <p class="service-description">厦门市政府出台了一系列创新创业政策，支持中小微企业发展，提供税收优惠、创业补贴等支持。</p>
+                    <ul class="service-features">
+                        <li class="service-feature">税收优惠政策</li>
+                        <li class="service-feature">创业补贴支持</li>
+                        <li class="service-feature">人才引进政策</li>
+                        <li class="service-feature">科技创新支持</li>
+                    </ul>
                 </div>
-                <div class="policy-item">
-                    <div class="policy-title">
-                        <h3>关于设立技改服务基金大力支持企业实施技术改造和增资扩产的通知</h3>
-                        <span class="policy-date">2020-08-11</span>
-                    </div>
-                    <div class="policy-content">
-                        <p>厦门市中小企业服务中心发布的技改服务基金通知</p>
-                        <a href="http://fwzx.xmsme.cn/html/2020/8/11/2020081110233433087.html" class="policy-link">查看详情</a>
-                    </div>
+                <div class="service-card">
+                    <h3 class="service-heading">福建省企业服务政策</h3>
+                    <p class="service-description">福建省出台了一系列企业服务政策，支持企业转型升级，提供技术改造、市场开拓等支持。</p>
+                    <ul class="service-features">
+                        <li class="service-feature">技术改造支持</li>
+                        <li class="service-feature">市场开拓支持</li>
+                        <li class="service-feature">融资支持政策</li>
+                        <li class="service-feature">产业升级支持</li>
+                    </ul>
                 </div>
-                <div class="policy-item">
-                    <div class="policy-title">
-                        <h3>厦门市商务局 厦门市财政局关于印发2020年度中央外经贸发展专项资金（外贸中小企业开拓国际市场项目）扶持政策的通知</h3>
-                        <span class="policy-date">2020-08-26</span>
-                    </div>
-                    <div class="policy-content">
-                        <p>厦门市商务局和财政局发布的扶持政策通知</p>
-                        <a href="http://xxgk.xm.gov.cn/swj/zcfg/gfxwj/202008/t20200826_2474006.htm" class="policy-link">查看详情</a>
-                    </div>
+                <div class="service-card">
+                    <h3 class="service-heading">国家级创新政策</h3>
+                    <p class="service-description">国家出台了一系列创新政策，支持创新创业，提供科技创新、成果转化等支持。</p>
+                    <ul class="service-features">
+                        <li class="service-feature">科技创新支持</li>
+                        <li class="service-feature">成果转化支持</li>
+                        <li class="service-feature">创业孵化支持</li>
+                        <li class="service-feature">产学研合作支持</li>
+                    </ul>
                 </div>
-                <div class="policy-item">
-                    <div class="policy-title">
-                        <h3>厦门市人力资源和社会保障局 厦门市公安局关于进一步优化技能人才落户有关工作的通知</h3>
-                        <span class="policy-date">2020-06-12</span>
-                    </div>
-                    <div class="policy-content">
-                        <p>厦门市人力资源和社会保障局和公安局发布的技能人才落户通知</p>
-                        <a href="http://hrss.xm.gov.cn/xxgk/zfxxgkzl/zfxxgkml/zcfg/202006/t20200612_2454654.htm" class="policy-link">查看详情</a>
-                    </div>
-                </div>
-                <div class="policy-item">
-                    <div class="policy-title">
-                        <h3>厦门日报：创新招聘方式 吸引人才留厦</h3>
-                        <span class="policy-date">2020-08-25</span>
-                    </div>
-                    <div class="policy-content">
-                        <p>厦门日报关于创新招聘方式的报道</p>
-                        <a href="http://hrss.xm.gov.cn/xxgk/mtbd/202008/t20200825_2473545.htm" class="policy-link">查看详情</a>
-                    </div>
-                </div>
-                <div class="policy-item">
-                    <div class="policy-title">
-                        <h3>厦门新引进人才生活补贴 "双一流"本科生可领2万元</h3>
-                        <span class="policy-date">2019-05-16</span>
-                    </div>
-                    <div class="policy-content">
-                        <p>厦门市新引进人才生活补贴政策</p>
-                        <a href="http://hrss.xm.gov.cn/xxgk/mtbd/201905/t20190516_2261559.htm" class="policy-link">查看详情</a>
-                    </div>
-                </div>
-                <div class="policy-item">
-                    <div class="policy-title">
-                        <h3>关于印发厦门市就业补助资金管理实施办法的通知</h3>
-                        <span class="policy-date">2019-12-12</span>
-                    </div>
-                    <div class="policy-content">
-                        <p>厦门市就业补助资金管理实施办法</p>
-                        <a href="http://hrss.xm20.gov.cn/xxgk/zfxxgkzl/zfxxgkml/zcfg/201912/t20191212_2407726.htm" class="policy-link">查看详情</a>
-                    </div>
-                </div>
-                <div class="policy-item">
-                    <div class="policy-title">
-                        <h3>关于进一步做好创业担保贷款财政贴息工作的通知</h3>
-                        <span class="policy-date">2020-01-19</span>
-                    </div>
-                    <div class="policy-content">
-                        <p>厦门市创业担保贷款财政贴息工作通知</p>
-                        <a href="http://hrss.xm.gov.cn/xxgk/zfxxgkzl/zfxxgkml/zcfg/202001/t20200119_2417592.htm" class="policy-link">查看详情</a>
-                    </div>
-                </div>
-                <div class="policy-item">
-                    <div class="policy-title">
-                        <h3>关于加强创业支持带动就业促进工作的通知</h3>
-                        <span class="policy-date">2020-01-19</span>
-                    </div>
-                    <div class="policy-content">
-                        <p>厦门市关于加强创业支持带动就业促进工作的通知</p>
-                        <a href="http://hrss.xm.gov.cn/xxgk/zfxxgkzl/zfxxgkml/zcfg/202001/t20200119_2417591.htm" class="policy-link">查看详情</a>
-                    </div>
-                </div>
-                <div class="policy-item">
-                    <div class="policy-title">
-                        <h3>个人创业担保贷款对象范围扩大了</h3>
-                        <span class="policy-date">2020-04-10</span>
-                    </div>
-                    <div class="policy-content">
-                        <p>厦门市个人创业担保贷款政策扩大</p>
-                        <a href="http://hrss.xm.gov.cn/xxgk/mtbd/202004/t20200410_2438202.htm" class="policy-link">查看详情</a>
-                    </div>
-                </div>
-                <div class="policy-item">
-                    <div class="policy-title">
-                        <h3>受疫情影响行业小微企业贷款贴息申报</h3>
-                        <span class="policy-date">2020-03-03</span>
-                    </div>
-                    <div class="policy-content">
-                        <p>厦门市受疫情影响行业小微企业贷款贴息申报政策</p>
-                        <a href="http://jr.xm.gov.cn/zfxxgk/zfxxgkml/gfxwj/202003/t20200303_2425699.htm" class="policy-link">查看详情</a>
-                    </div>
+                <div class="service-card">
+                    <h3 class="service-heading">厦门市人才引进政策</h3>
+                    <p class="service-description">厦门市出台了一系列人才引进政策，支持人才引进，提供住房补贴、人才奖励等支持。</p>
+                    <ul class="service-features">
+                        <li class="service-feature">住房补贴政策</li>
+                        <li class="service-feature">人才奖励政策</li>
+                        <li class="service-feature">子女教育政策</li>
+                        <li class="service-feature">医疗保障政策</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 其他资讯区块 -->
-    <section class="other-news">
+    <!-- 行业动态 -->
+    <section class="card-section">
         <div class="container">
-            <div class="news-grid">
-                <div class="news-section" id="company-dynamic">
-                    <h3>企业动态</h3>
-                    <div class="news-list">
-                        <div class="news-item">
-                            <h4>龙溪企服新项目启动</h4>
-                            <span class="news-date">2024-06-01</span>
-                            <p>公司最新项目进展和业务动态</p>
-                        </div>
-                        <div class="news-item">
-                            <h4>合作伙伴签约仪式</h4>
-                            <span class="news-date">2024-05-15</span>
-                            <p>与多家企业签订战略合作协议</p>
-                        </div>
-                    </div>
+            <h2 class="card-title">行业动态</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3 class="card-heading">企业服务行业发展趋势</h3>
+                    <p class="card-text">企业服务行业正朝着专业化、标准化、智能化方向发展，为企业提供更加高效、便捷的服务。</p>
+                    <div class="card-date">2025年11月</div>
                 </div>
-                <div class="news-section" id="property-announcement">
-                    <h3>物业公告</h3>
-                    <div class="news-list">
-                        <div class="news-item">
-                            <h4>园区维护通知</h4>
-                            <span class="news-date">2024-06-10</span>
-                            <p>同安双创基地园区维护安排通知</p>
-                        </div>
-                        <div class="news-item">
-                            <h4>停车位管理规定</h4>
-                            <span class="news-date">2024-05-20</span>
-                            <p>园区停车位管理规定更新</p>
-                        </div>
-                    </div>
+                <div class="card">
+                    <h3 class="card-heading">办公空间市场需求增长</h3>
+                    <p class="card-text">随着创新创业热潮的兴起，办公空间市场需求持续增长，高品质办公空间备受青睐。</p>
+                    <div class="card-date">2025年10月</div>
                 </div>
-                <div class="news-section" id="industry-dynamic">
-                    <h3>行业动态</h3>
-                    <div class="news-list">
-                        <div class="news-item">
-                            <h4>厦门创业扶持政策更新</h4>
-                            <span class="news-date">2024-06-05</span>
-                            <p>厦门市政府发布最新创业扶持政策</p>
-                        </div>
-                        <div class="news-item">
-                            <h4>企业服务行业发展趋势</h4>
-                            <span class="news-date">2024-05-25</span>
-                            <p>企业服务行业的最新发展趋势分析</p>
-                        </div>
-                    </div>
+                <div class="card">
+                    <h3 class="card-heading">数字化转型加速</h3>
+                    <p class="card-text">数字化转型正在加速，企业服务行业正朝着数字化、智能化方向发展。</p>
+                    <div class="card-date">2025年9月</div>
                 </div>
-                <div class="news-section" id="recruitment">
-                    <h3>招聘求职</h3>
-                    <div class="news-list">
-                        <div class="news-item">
-                            <h4>招聘岗位：运营专员</h4>
-                            <span class="news-date">2024-06-01</span>
-                            <p>龙溪企服招聘运营专员岗位</p>
-                        </div>
-                        <div class="news-item">
-                            <h4>招聘岗位：财务助理</h4>
-                            <span class="news-date">2024-05-15</span>
-                            <p>龙溪企服招聘财务助理岗位</p>
-                        </div>
-                    </div>
+                <div class="card">
+                    <h3 class="card-heading">共享办公模式兴起</h3>
+                    <p class="card-text">共享办公模式正在兴起，为企业提供更加灵活、便捷的办公空间解决方案。</p>
+                    <div class="card-date">2025年8月</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
+    <!-- 联系我们 -->
+    <section class="contact-section">
         <div class="container">
+            <h2 class="contact-title">联系我们</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <h3 class="contact-heading">联系电话</h3>
+                    <p class="contact-info">17750587110</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <h3 class="contact-heading">电子邮箱</h3>
+                    <p class="contact-info">jayvong21@gmail.com</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h3 class="contact-heading">公司地址</h3>
+                    <p class="contact-info">厦门市同安区龙溪商务中心</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container footer-content">
             <div class="footer-links">
-                <a href="index.html">首页</a>
-                <a href="company-profile.html">企业概况</a>
-                <a href="product-services.html">产品服务</a>
-                <a href="news-center.html">资讯中心</a>
-                <a href="enterprises.html">入驻企业</a>
-                <a href="join.html">立即入驻</a>
-            </2div>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <span>电话：17750587110</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>邮箱：jayvong21@gmail.com</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>地址：厦门市同安区龙溪商务中心</span>
-                </div>
+                <a href="index.html" class="footer-link">首页</a>
+                <a href="company-profile.html" class="footer-link">企业概况</a>
+                <a href="product-services.html" class="footer-link">产品服务</a>
+                <a href="news-center.html" class="footer-link">资讯中心</a>
+                <a href="investment.html" class="footer-link">入驻企业</a>
+                <a href="contact.html" class="footer-link">立即入驻</a>
             </div>
-            <p class="copyright">© 2026 厦门龙溪传芳企业服务有限公司. 保留所有权利.</p>
+            <p class="footer-text">© 2026 龙溪企服官方网站. All rights reserved.</p>
+            <p class="footer-text">龙溪企服致力于为中小微企业提供专业化的、一站式的企业服务解决方案。</p>
         </div>
     </footer>
 
-    <script>
-        // 导航平滑滚动
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
-                if (targetSection) {
-                    targetSection.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-
-        // 响应式导航菜单
-        const navLinks = document.querySelector('.nav-links');
-        const logo = document.querySelector('.logo');
-        
-        function adjustNavForMobile() {
-            if (window.innerWidth <= 768) {
-                logo.style.flexDirection = 'column';
-                logo.style.alignItems = 'center';
-                logo.style.marginBottom = '20px';
-            } else {
-                logo.style.flexDirection = 'row';
-                logo.style.alignItems = 'center';
-                logo.style.marginBottom = '0';
-            }
-        }
-        
-        window.addEventListener('resize', adjustNavForMobile);
-        adjustNavForMobile();
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>
