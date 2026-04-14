@@ -24,11 +24,44 @@
                 </div>
                 <div class="nav-links">
                     <a href="#home">首页</a>
-                    <a href="#about">企业概况</a>
-                    <a href="#products">产品服务</a>
-                    <a href="#news">资讯中心</a>
-                    <a href="#enterprises">入驻企业</a>
-                    <a href="#join">立即入驻</a>
+                    
+                    <!-- 企业概况下拉菜单 -->
+                    <div class="dropdown">
+                        <a href="#company-profile" class="dropdown-toggle">企业概况</a>
+                        <div class="dropdown-content">
+                            <a href="#company-introduction">企业简介</a>
+                            <a href="#business-scope">经营范围</a>
+                            <a href="#company-culture">企业文化</a>
+                            <a href="#service-concept">服务理念</a>
+                        </div>
+                    </div>
+                    
+                    <!-- 产品服务下拉菜单 -->
+                    <div class="dropdown">
+                        <a href="#product-services" class="dropdown-toggle">产品服务</a>
+                        <div class="dropdown-content">
+                            <!-- 办公项目 -->
+                            <div class="dropdown-submenu">
+                                <a href="#office-projects">办公项目</a>
+                                <div class="dropdown-subcontent">
+                                    <a href="#longxi-center">龙溪商务中心</a>
+                                    <a href="#meifeng-hemei">美峰创谷-合美大厦</a>
+                                </div>
+                            </div>
+                            <!-- 企业服务 -->
+                            <div class="dropdown-submenu">
+                                <a href="#enterprise-services">企业服务</a>
+                                <div class="dropdown-subcontent">
+                                    <a href="#investment-agent">招商代理</a>
+                                    <a href="#financial-agent">财务代理</a>
+                                    <a href="#decoration-design">装修设计</a>
+                                    <a href="#policy-consulting">政策咨询</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#business-cooperation">业务合作</a>
                 </div>
             </nav>
         </div>
@@ -172,11 +205,9 @@
         <div class="container">
             <div class="footer-links">
                 <a href="#home">首页</a>
-                <a href="#about">企业概况</a>
-                <a href="#products">产品服务</a>
-                <a href="#news">资讯中心</a>
-                <a href="#enterprises">入驻企业</a>
-                <a href="#join">立即入驻</a>
+                <a href="#company-profile">企业概况</a>
+                <a href="#product-services">产品服务</a>
+                <a href="#business-cooperation">业务合作</a>
             </div>
             <p class="copyright">© 2026 厦门龙溪传芳企业服务有限公司. 保留所有权利.</p>
         </div>
@@ -184,7 +215,7 @@
 
     <script>
         // 导航平滑滚动
-        document.querySelectorAll('.nav-links a').forEach(link => {
+        document.querySelectorAll('.nav-links a, .dropdown-content a, .dropdown-subcontent a').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
