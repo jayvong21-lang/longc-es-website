@@ -1,0 +1,6 @@
+backup/
+longc-es/
+longc-es-website/
+.trae/
+node_modules/
+.DS_Store
