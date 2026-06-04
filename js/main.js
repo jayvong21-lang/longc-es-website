@@ -151,6 +151,75 @@ window.addEventListener('load', function() {
     document.body.classList.add('loaded');
 });
 
+// ========== 资讯中心 ==========
+function initNewsCenter() {
+    const grid = document.getElementById('newsGrid');
+    const pagination = document.getElementById('pagination');
+    if (!grid || typeof NEWS_DATA === 'undefined') return;
+
+    const ITEMS_PER_PAGE = 6;
+    let currentPage = 1;
+    let currentCategory = 'all';
+
+    function renderNews(page, category) {
+        let filtered = NEWS_DATA;
+        if (category !== 'all') {
+            filtered = NEWS_DATA.filter(n => n.category === category);
+        }
+
+        const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
+        const start = (page - 1) * ITEMS_PER_PAGE;
+        const items = filtered.slice(start, start + ITEMS_PER_PAGE);
+
+        grid.innerHTML = items.map(n => `
+            <article class="news-card">
+                <div class="news-image">
+                    <img src="${n.image}" alt="${n.title}" loading="lazy" onerror="this.style.display='none'">
+                </div>
+                <div class="news-content">
+                    <span class="news-category">${n.category}</span>
+                    <span class="news-date">${n.date}</span>
+                    <h3>${n.title}</h3>
+                    <p>${n.summary}</p>
+                </div>
+            </article>
+        `).join('');
+
+        // Pagination
+        if (totalPages > 1) {
+            let html = '';
+            for (let i = 1; i <= totalPages; i++) {
+                html += `<button class="page-btn${i === page ? ' active' : ''}" data-page="${i}">${i}</button>`;
+            }
+            pagination.innerHTML = html;
+            pagination.querySelectorAll('.page-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    currentPage = parseInt(this.dataset.page);
+                    renderNews(currentPage, currentCategory);
+                    window.scrollTo({ top: grid.offsetTop - 100, behavior: 'smooth' });
+                });
+            });
+        } else {
+            pagination.innerHTML = '';
+        }
+    }
+
+    // Filter buttons
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            currentCategory = this.dataset.cat;
+            currentPage = 1;
+            renderNews(currentPage, currentCategory);
+        });
+    });
+
+    renderNews(currentPage, currentCategory);
+}
+
+document.addEventListener('DOMContentLoaded', initNewsCenter);
+
 function initScrollAnimations() {
     if (!('IntersectionObserver' in window)) return;
     
