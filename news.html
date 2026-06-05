@@ -296,7 +296,7 @@
                     <div class="news-meta"><span class="news-category">${a.category}</span><span class="news-date">${a.date}</span></div>
                     <h3 class="news-title">${a.title}</h3>
                     <p class="news-summary">${a.summary}</p>
-                    <a href="#" class="news-link" onclick="alert('详细内容页面开发中，敬请期待')">阅读更多 →</a>
+                    <a href="news-detail.html?id=${a.id}" class="news-link">阅读更多 →</a>
                 </div>
             </article>`).join(''):'<div class="no-results">当前分类暂无内容，敬请期待</div>';
         const pg=document.getElementById('pagination');

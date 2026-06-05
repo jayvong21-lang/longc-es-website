@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新闻详情 - 龙溪企服 LongC-ES</title>
+    <meta name="description" content="龙溪企服资讯中心新闻详情页">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .news-detail-wrap { max-width: 860px; margin: 0 auto; padding: 40px 0; }
+        .news-detail-wrap .back-link { display: inline-block; margin-bottom: 30px; color: #1e3a5f; text-decoration: none; font-size: 15px; }
+        .news-detail-wrap .back-link:hover { text-decoration: underline; }
+        .news-detail-wrap .detail-image { width: 100%; max-height: 480px; object-fit: cover; border-radius: 8px; margin-bottom: 30px; }
+        .news-detail-wrap .detail-meta { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+        .news-detail-wrap .detail-category { display: inline-block; padding: 4px 12px; background: #e8f0fe; color: #1e3a5f; border-radius: 4px; font-size: 13px; font-weight: 500; }
+        .news-detail-wrap .detail-date { color: #999; font-size: 14px; }
+        .news-detail-wrap .detail-title { font-size: 26px; font-weight: 700; color: #222; line-height: 1.4; margin-bottom: 20px; }
+        .news-detail-wrap .detail-body { font-size: 16px; line-height: 1.9; color: #444; }
+        .news-detail-wrap .detail-body p { margin-bottom: 16px; }
+        .news-detail-wrap .detail-body ul { padding-left: 20px; margin-bottom: 16px; }
+        .news-detail-wrap .detail-body li { margin-bottom: 8px; }
+        .news-detail-wrap .detail-body strong { color: #1e3a5f; }
+        @media (max-width: 768px) {
+            .news-detail-wrap { padding: 20px 15px; }
+            .news-detail-wrap .detail-title { font-size: 20px; }
+            .news-detail-wrap .detail-body { font-size: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-cn">龙溪企服</span>
+                    <span class="logo-en">LongC-ES</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="about.html">关于我们</a></li>
+                <li><a href="investment.html">招商运营</a></li>
+                <li><a href="services.html">企业服务</a></li>
+                <li><a href="news.html" class="active">资讯中心</a></li>
+                <li><a href="enterprises.html">入驻企业</a></li>
+                <li><a href="contact.html">联系我们</a></li>
+            </ul>
+            <div class="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>资讯中心</h1>
+            <p class="breadcrumb"><a href="index.html">首页</a> / <a href="news.html">资讯中心</a> / 新闻详情</p>
+        </div>
+    </section>
+
+    <section class="news-detail-wrap" id="detailContent"><div class="container"><p style="text-align:center;color:#999;padding:60px 0;">加载中...</p></div></section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-cn">龙溪企服</span>
+                        <span class="logo-en">LongC-ES</span>
+                    </div>
+                    <p class="footer-desc">厦门龙溪传芳企业服务有限公司，专业提供写字楼商业体招商运营、财务代理记账、工商注册等企业服务。</p>
+                </div>
+                <div class="footer-links">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="about.html">关于我们</a></li>
+                        <li><a href="investment.html">招商运营</a></li>
+                        <li><a href="services.html">企业服务</a></li>
+                        <li><a href="news.html">资讯中心</a></li>
+                        <li><a href="enterprises.html">入驻企业</a></li>
+                        <li><a href="contact.html">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li><span class="contact-icon">📍</span><span>厦门市同安区西洲路1299号龙溪商务中心</span></li>
+                        <li><span class="contact-icon">📞</span><span>18506951837 (黄生)</span></li>
+                        <li><span class="contact-icon">📧</span><span>2029736860@qq.com</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 厦门龙溪传芳企业服务有限公司 版权所有 | 龙溪企服 LongC-ES</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    const NEWS_DATA = [
+        {id:17,category:'招商资讯',date:'2026-06-05',title:'美峰创谷合美大厦8-9楼精装完工，出租率超80%',
+         summary:'龙溪企服运营的美峰创谷合美大厦8楼、9楼精装修已全面完工，市场反响热烈，整体出租率已超80%。合美大厦位于厦门同安·环东海域美峰创谷核心区，周边产业集聚，交通便利，配套成熟。\n\n目前2楼、3楼、5楼、6楼、7楼火热招商中，面积60㎡至1850㎡可灵活定制分割，满足各类企业办公需求。\n\n<b>重点招商业态：</b>\n• 科技企业区域总部 / 研发中心\n• 贸易公司运营中心 / 办事处\n• 电商及新媒体运营工作室\n• 中小成长型企业定制办公空间\n\n大厦配备独立大堂、电梯直达，配套物业完善。精装单元可拎包入驻，毛坯单元可按需定制装修，欢迎来电洽谈：18506951837（黄生）',
+         image:'images/meifeng-chuanggu-01.jpg'},
+        {id:1,category:'行业动态',date:'2026-05-31',title:'2025年厦门写字楼市场数据出炉：岛外空置率41.4%，租金持续承压',
+         summary:'2025年Q3厦门甲级写字楼总存量达179万㎡，全市空置率36.5%，平均租金86.8元/㎡/月。岛外区域租金最低72.7元/㎡/月，空置率41.4%。TMT和贸易企业主导租赁成交。',image:'images/news1.png'},
+        {id:2,category:'招商资讯',date:'2026-05-28',title:'环东海域银城智谷加速招商：82-300㎡写字楼可租可售',
+         summary:'环东海域新城产业"一号项目"银城智谷集办公、商业、公寓于一体。一期建成投用，三期正推进前期设计，预计2025年Q3陆续开工。同步招租中。',image:'images/news2.png'},
+        {id:3,category:'政策解读',date:'2026-05-25',title:'厦门税务"五步法"精准推送税费优惠，72条举措支持民营经济',
+         summary:'厦门市税务局推出"五步法"政策找人机制，累计出台72条举措简化办税流程。电子税务局实现智能预填和自动算税，中小微企业享多项减税红利。',image:'images/news3.png'},
+        {id:4,category:'企业服务',date:'2026-05-22',title:'厦门推行"一网通办"企业开办再提速：0.5个工作日拿执照',
+         summary:'厦门市市场监管局持续优化营商环境，企业开办实现"一网通办、一日办结"，最快0.5个工作日内完成执照申领、印章刻制、发票申领全流程。',image:'images/news4.png'},
+        {id:5,category:'行业动态',date:'2026-05-18',title:'同安置业智能制造产业园完工：3家企业签约，拟出租厂房4万㎡',
+         summary:'同安置业智能制造产业园提前3个月通过质量竣工验收，已完成投资约4.95亿元。瀚许电气、富旺莱等企业已入驻。',image:'images/news5.png'},
+        {id:6,category:'公司动态',date:'2026-05-15',title:'龙溪企服官网升级：全新资讯中心上线，持续关注同安产业动态',
+         summary:'龙溪企服 LongC-ES 官网焕新升级，新增行业资讯板块，定期发布厦门同安写字楼、厂房租赁市场行情及产业政策解读。',image:'images/news6.png'},
+        {id:7,category:'招商资讯',date:'2026-05-12',title:'厦门同安深圳招商推介会：银城智谷与数字工业计算中心亮相',
+         summary:'同安区产业园区深圳招商推介会成功举行，银城智谷与厦门数字工业计算中心集中亮相。银城智谷总投资近百亿元，占地约159万㎡。',image:'images/news1.png'},
+        {id:8,category:'政策解读',date:'2026-05-08',title:'厦门小微企业一次性创业补贴1万元，高校毕业生创业可申领',
+         summary:'离校2年内高校毕业生、就业困难人员等首次创办小微企业，正常运营1年以上可获1万元一次性创业补贴。',image:'images/news3.png'},
+        {id:9,category:'企业服务',date:'2026-05-05',title:'厦门增值税优惠：小规模纳税人3%征收率减按1%执行',
+         summary:'2026年起小规模纳税人增值税3%征收率减按1%征收。月销售额10万元以下（季度30万元）免征增值税。',image:'images/news4.png'},
+        {id:10,category:'行业动态',date:'2026-04-28',title:'2026年Q1厦门甲级写字楼空置率升至39.7%，岛外租金持续承压',
+         summary:'2026年Q1厦门甲级写字楼总存量升至184.55万㎡，受需求乏力和新增供应影响，空置率环比上升2.6个百分点至39.7%。',image:'images/news1.png'},
+        {id:11,category:'招商资讯',date:'2026-04-22',title:'环东海域标准厂房招租：1-5层每层2500㎡可按需分租',
+         summary:'环东海域美溪道标准厂房热租，1层层高6m楼上4.2m，货梯5吨，工业产权可环评。1楼22元/㎡，5楼10元/㎡，整租优惠。',image:'images/news2.png'},
+        {id:12,category:'政策解读',date:'2026-04-15',title:'福建省推行"免申即享"惠企政策，企业无需申报即可享受补贴',
+         summary:'福建省全面推广惠企政策"免申即享"机制，通过大数据比对自动甄别符合条件企业，主动推送补贴资金。已覆盖30余项政策。',image:'images/news3.png'},
+        {id:13,category:'企业服务',date:'2026-04-10',title:'厦门工商注册全程电子化：足不出户完成公司设立登记',
+         summary:'厦门市市场监督管理局推行商事登记全程电子化，通过福建省网上办事大厅即可完成公司设立登记。在线提交、电子签名、邮寄到家。',image:'images/news4.png'},
+        {id:14,category:'公司动态',date:'2026-04-05',title:'龙溪企服Q1服务企业数突破50家，蝉联同安写字楼招商标杆',
+         summary:'龙溪企服2026年第一季度累计服务企业数突破50家。持续深耕同安区域，以专业招商运营能力赢得市场认可。',image:'images/news6.png'},
+        {id:15,category:'行业动态',date:'2026-03-28',title:'厦门新能源产业链加速布局：同安工业集中区拟新增厂房供应',
+         summary:'随着厦门新能源产业链加速发展，同安工业集中区规划新增厂房供应以满足电池、储能等企业需求，上下游企业前来考察选址。',image:'images/news5.png'},
+        {id:16,category:'招商资讯',date:'2026-06-04',title:'厦门同安写字楼厂房市场动态（6月4日）：银城智谷加速招租，标准厂房供应充足',
+         summary:'银城智谷产业发展中心持续招租，高区精装写字楼93㎡月租2950元起，地铁6号线直达。环东海域美溪道标准厂房1-5层2500㎡可按需分租，首层22元/㎡，工业产权可环评。同安区招商力度不减，中小企业入驻窗口期明显。',image:'images/news2.png'},
+    ];
+
+    function getQueryParam(name) {
+        const p = new URLSearchParams(window.location.search);
+        return p.get(name);
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const id = parseInt(getQueryParam('id')) || 17;
+        const article = NEWS_DATA.find(a => a.id === id);
+        const el = document.getElementById('detailContent');
+
+        if (!article) {
+            el.innerHTML = '<div class="container"><p style="text-align:center;color:#999;padding:60px 0;">未找到该新闻</p><div style="text-align:center"><a href="news.html" style="color:#1e3a5f;">← 返回资讯中心</a></div></div>';
+            return;
+        }
+
+        const bodyHtml = article.summary.replace(/\n/g, '<br>');
+
+        el.innerHTML = `
+            <div class="container">
+                <a href="news.html" class="back-link">← 返回资讯中心</a>
+                <img class="detail-image" src="${article.image}" alt="${article.title}">
+                <div class="detail-meta">
+                    <span class="detail-category">${article.category}</span>
+                    <span class="detail-date">${article.date}</span>
+                </div>
+                <h1 class="detail-title">${article.title}</h1>
+                <div class="detail-body">${bodyHtml}</div>
+                <div style="margin-top:40px;padding-top:30px;border-top:1px solid #eee;text-align:center;">
+                    <p style="color:#999;font-size:14px;margin-bottom:10px;">联系我们：18506951837（黄生）</p>
+                    <a href="news.html" style="color:#1e3a5f;font-size:15px;text-decoration:none;">← 返回资讯中心</a>
+                </div>
+            </div>
+        `;
+    });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>
