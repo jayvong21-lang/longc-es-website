@@ -266,12 +266,13 @@
 
     <script>
     const NEWS_DATA = [
-        {id:29,category:'公司动态',date:'2026-06-08',title:'厦门龙溪传芳企业服务有限公司旗下龙溪商务中心202',summary:'厦门龙溪传芳企业服务有限公司旗下龙溪商务中心2026年5月有相关企业服务及写字楼等租赁相关动态呈现',image:'images/news5.png'},
-        {id:28,category:'行业动态',date:'2026-06-08',title:'2026年6月3日厦门任和运动智能制造项目在同安工',summary:'2026年6月3日厦门任和运动智能制造项目在同安工业集中区开工，总投资2亿元，预计2028年投产，同',image:'images/news4.png'},
-        {id:27,category:'企业服务',date:'2026-06-08',title:'2026年厦门在全省率先推出OPC企业开办“一类事',summary:'2026年厦门在全省率先推出OPC企业开办“一类事”服务，精准赋能人工智能领域“单人轻创业”，还持续',image:'images/news3.png'},
-        {id:26,category:'政策解读',date:'2026-06-08',title:'2026年厦门市政府发布《促进中小企业高质量发展若',summary:'2026年厦门市政府发布《促进中小企业高质量发展若干措施》，明确支持第三方专业机构开展“财税合规体检',image:'images/news2.png'},
-        {id:25,category:'招商资讯',date:'2026-06-08',title:'厦门同安环东海域2026年有多类厂房写字楼出租招商',summary:'厦门同安环东海域2026年有多类厂房写字楼出租招商，如宏丞光电有800平多层厂房8000元/月起租，',image:'images/news1.png'},
-        {id:24,category:'行业动态',date:'2026-06-08',title:'2026年厦门同安区两大产业园区赴深圳招商推介，同',summary:'2026年厦门同安区两大产业园区赴深圳招商推介，同安科创中心有专业化招商公告，同安置业智能制造产业园',image:'images/news6.png'},
+[
+        {id:29,category:'公司动态',date:'2026-06-08',title:'龙溪商务中心5月企业服务动态',summary:'龙溪商务中心2026年5月写字楼租赁及企业服务动态更新',image:'images/news5.png'},
+        {id:28,category:'行业动态',date:'2026-06-08',title:'2026年6月厦门同安任和运动智能制造项目开工',summary:'该项目总投资2亿元，位于同安工业集中区，预计2028年投产',image:'images/news4.png',
+        {id:27,category:'企业服务',date:'2026-06-08',title:'厦门率先推OPC企业开办一类事服务精准赋能AI单人轻创业',summary:'近日思明区市场监管局联合区政务服务中心率先推OPC企业开办一类事服务，精准赋能AI领域单人轻创业，还介绍了申请该服务的线下、线上等方式及流程',image:'images/news3.png',
+        {id:26,category:'政策解读',date:'2026-06-08',title:'厦门促中小企业发展 财税合规体检补贴上限5000元',summary:'厦门多措并举促进中小企业发展，财税合规体检补贴上限5000元',image:'images/news2.png',
+        {id:25,category:'招商资讯',date:'2026-06-08',title:'厦门同安环东海域2026年厂房写字楼出租招商',summary:'2026年5月15日有宏丞光电在同安环东海域出租800㎡多层厂房，8000元/月押2付3，可协助办执照环评，周边配套成熟',image:'images/news1.png',
+        {id:24,category:'行业动态',date:'2026-06-08',title:'2026厦门同安两园区赴深招商 智能产业园转入运营',summary:'2026年同安区两大产业园区赴深圳推介，银城智谷等亮相，促湾区企业与本土园区对接，引优质项目落地',image:'images/news6.png',
         {id:23,category:'行业动态',date:'2026-06-07',title:'厦门同安智能制造项目集中开工',summary:'任和运动智能制造项目开工，总投资2亿元；同安置业产业园通过验收。',image:'images/news5.png'},
         {id:22,category:'企业服务',date:'2026-06-07',title:'福建推行企业开办"一件事"方案',summary:'福建省8部门联合推出企业开办集成化办理方案，厦门同步实施。',image:'images/news4.png'},
         {id:21,category:'政策解读',date:'2026-06-07',title:'厦门中小企业财税优惠政策延续',summary:'厦门延续小规模纳税人增值税减征，企业所得税优惠同步执行。',image:'images/news3.png'},
@@ -295,6 +296,7 @@
         {id:14,category:'公司动态',date:'2026-04-05',title:'龙溪企服Q1服务企业数突破50家',summary:'龙溪企服Q1服务企业数突破50家，蝉联同安写字楼招商标杆。',image:'images/news6.png'},
         {id:15,category:'行业动态',date:'2026-03-28',title:'同安工业集中区新增厂房供应',summary:'新能源产业链加速布局，同安工业集中区新增厂房满足电池储能需求。',image:'images/news5.png'},
         {id:16,category:'招商资讯',date:'2026-06-04',title:'厦门同安写字楼厂房市场动态',summary:'银城智谷高区精装写字楼93㎡月租2950元，环东海域厂房招租。',image:'images/news2.png'}
+    ]
     ];
     const PAGE_SIZE = 6;
     let cp = 1, cc = 'all';
