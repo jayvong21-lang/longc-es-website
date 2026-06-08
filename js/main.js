@@ -181,6 +181,7 @@ function initNewsCenter() {
                     <span class="news-date">${n.date}</span>
                     <h3>${n.title}</h3>
                     <p>${n.summary}</p>
+                    <a href="news-detail.html?id=${n.id}" class="news-link">阅读更多 →</a>
                 </div>
             </article>
         `).join('');
