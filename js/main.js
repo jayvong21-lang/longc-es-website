@@ -173,9 +173,6 @@ function initNewsCenter() {
 
         grid.innerHTML = items.map(n => `
             <article class="news-card">
-                <div class="news-image">
-                    <img src="${n.image}" alt="${n.title}" loading="lazy" onerror="this.style.display='none'">
-                </div>
                 <div class="news-content">
                     <span class="news-category">${n.category}</span>
                     <span class="news-date">${n.date}</span>

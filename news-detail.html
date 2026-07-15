@@ -10,7 +10,6 @@
         .news-detail-wrap { max-width: 860px; margin: 0 auto; padding: 40px 0; }
         .news-detail-wrap .back-link { display: inline-block; margin-bottom: 30px; color: #1e3a5f; text-decoration: none; font-size: 15px; }
         .news-detail-wrap .back-link:hover { text-decoration: underline; }
-        .news-detail-wrap .detail-image { width: 100%; aspect-ratio: 16/9; object-fit: cover; object-position: center; border-radius: 8px; margin-bottom: 30px; }
         .news-detail-wrap .detail-meta { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
         .news-detail-wrap .detail-category { display: inline-block; padding: 4px 12px; background: #e8f0fe; color: #1e3a5f; border-radius: 4px; font-size: 13px; font-weight: 500; }
         .news-detail-wrap .detail-date { color: #999; font-size: 14px; }
@@ -119,7 +118,6 @@
         el.innerHTML = `
             <div class="container">
                 <a href="news.html" class="back-link">← 返回资讯中心</a>
-                <img class="detail-image" src="${article.image}" alt="${article.title}">
                 <div class="detail-meta">
                     <span class="detail-category">${article.category}</span>
                     <span class="detail-date">${article.date}</span>
