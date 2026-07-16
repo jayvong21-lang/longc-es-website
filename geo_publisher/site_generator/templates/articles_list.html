@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>区域专题 - 龙溪企服 LongC-ES | 厦门龙溪传芳企业服务有限公司</title>
+    <meta name="description" content="厦门同安区、翔安区、湖里区创业办公指南——厂房·写字楼·产业园租金行情、政策补贴、选址建议一站式了解。">
+    <meta name="keywords" content="厦门区域专题,同安写字楼,翔安产业园,湖里自贸区,厦门办公室租金,厦门创业选址">
+    <link rel="canonical" href="{{ site_url }}/articles/">
+    <meta property="og:title" content="区域专题 - 龙溪企服 LongC-ES">
+    <meta property="og:description" content="厦门同安区、翔安区、湖里区创业办公指南">
+    <meta property="og:url" content="{{ site_url }}/articles/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta name="twitter:card" content="summary">
+    <link rel="stylesheet" href="css/style.css?v=20260716-articles">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "厦门区域专题",
+        "description": "厦门同安区、翔安区、湖里区创业办公指南",
+        "url": "{{ site_url }}/articles/",
+        "about": {
+            "@type": "City",
+            "name": "厦门"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-cn">龙溪企服</span>
+                    <span class="logo-en">LongC-ES</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="about.html">关于我们</a></li>
+                <li><a href="services.html">企业服务</a></li>
+                <li><a href="investment.html">招商合作</a></li>
+                <li><a href="news.html">资讯中心</a></li>
+                <li><a href="properties.html">房源库</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="cases.html">客户案例</a></li>
+                <li class="nav-dropdown">
+                    <a href="articles.html" class="dropdown-toggle active">区域专题 <span class="dropdown-arrow">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="articles/tongan.html">同安区</a></li>
+                        <li><a href="articles/xiangan.html">翔安区</a></li>
+                        <li><a href="articles/huli.html">湖里区</a></li>
+                        <li><a href="articles/siming.html">思明区</a></li>
+                        <li><a href="articles/jimei.html">集美区</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">联系我们</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面标题 -->
+    <section class="page-header">
+        <div class="container">
+            <h1>区域专题</h1>
+            <p class="breadcrumb"><a href="index.html">首页</a> / 区域专题</p>
+        </div>
+    </section>
+
+    <!-- 文章列表 -->
+    <section class="article-list-section">
+        <div class="container">
+            <div class="article-list-intro">
+                <div>
+                    <span class="article-list-kicker">XIAMEN BUSINESS GUIDES</span>
+                    <h2>按区域与经营场景，快速找到适合你的选址答案</h2>
+                </div>
+                <p>覆盖厦门重点区域租金、产业配套、注册落地与租赁风险，帮助企业先看懂差异，再决定去哪里。</p>
+            </div>
+            <div class="articles-grid">
+                {% for article in articles %}
+                <article class="article-card article-card--{% if article.region == '厦门' %}guide{% else %}area{% endif %}">
+                    <a href="../articles/{{ article.slug }}.html" class="article-card-link">
+                        <div class="article-card-top" aria-hidden="true">
+                            <span class="article-card-index">{{ "%02d" | format(loop.index) }}</span>
+                            <span class="article-card-type">{% if article.region == '厦门' %}实用指南{% else %}区域指南{% endif %}</span>
+                        </div>
+                        <div class="article-card-content">
+                            <span class="article-region-tag">{{ article.region }}</span>
+                            <h2>{{ article.title }}</h2>
+                            <p>{{ article.description[:100] }}{% if article.description|length > 100 %}...{% endif %}</p>
+                            <div class="article-card-meta">
+                                <span class="article-date">{{ article.date }}</span>
+                                <span class="article-read-more">查看详情 →</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs 部分 -->
+    <section class="faq-section" style="padding:60px 0;background:#f8fafc;">
+        <div class="container">
+            <h2 style="text-align:center;margin-bottom:40px;font-size:28px;color:#1e293b;">常见问题</h2>
+            <div class="faq-list" style="max-width:800px;margin:0 auto;">
+                {% for faq in faqs %}
+                <div class="faq-item" style="background:#fff;border-radius:8px;margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,0.1);overflow:hidden;">
+                    <div class="faq-question" style="padding:16px 20px;font-weight:500;color:#1e293b;cursor:pointer;display:flex;justify-content:space-between;align-items:center;" onclick="this.nextElementSibling.classList.toggle('faq-answer-open')">
+                        <span>{{ faq.question }}</span>
+                        <span style="color:#2563eb;font-size:18px;">▼</span>
+                    </div>
+                    <div class="faq-answer" style="padding:0 20px;max-height:0;overflow:hidden;transition:all 0.3s ease;color:#475569;line-height:1.8;">
+                        <p style="padding-bottom:16px;">{{ faq.answer }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>需要厦门办公室或厂房选址帮助？</h2>
+                <p>龙溪企服深耕厦门，免费提供带看、谈判协助和政策对接服务</p>
+                <div class="cta-contact">
+                    <div class="cta-item">
+                        <span class="cta-label">电话</span>
+                        <span class="cta-value">黄 18016526868 / 李 17750587110</span>
+                    </div>
+                    <div class="cta-item">
+                        <span class="cta-label">地址</span>
+                        <span class="cta-value">厦门市同安区龙溪商务中心</span>
+                    </div>
+                </div>
+                <a href="../contact.html" class="btn btn-primary btn-large">立即咨询</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-cn">龙溪企服</span>
+                        <span class="logo-en">LongC-ES</span>
+                    </div>
+                    <p class="footer-desc">厦门龙溪传芳企业服务有限公司，专业提供写字楼商业体招商运营、财务代理记账、工商注册等企业服务。</p>
+                </div>
+                <div class="footer-links">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="../index.html">首页</a></li>
+                        <li><a href="../about.html">关于我们</a></li>
+                        <li><a href="../investment.html">招商运营</a></li>
+                        <li><a href="../services.html">企业服务</a></li>
+                        <li><a href="../news.html">资讯中心</a></li>
+                        <li><a href="../enterprises.html">入驻企业</a></li>
+                        <li><a href="../contact.html">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>
+                            <span class="contact-icon">📍</span>
+                            <span>厦门市同安区龙溪商务中心</span>
+                        </li>
+                        <li>
+                            <span class="contact-icon">📞</span>
+                            <span>黄 18016526868 / 李 17750587110</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 厦门龙溪传芳企业服务有限公司 版权所有 | 龙溪企服 LongC-ES</p>
+                <p style="font-size:12px;color:#94a3b8;margin-top:4px"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" style="color:#94a3b8;text-decoration:none">闽ICP备2026020749号</a> &nbsp;|&nbsp; <a href="https://beian.mps.gov.cn/#/query/webSearch?code=35021202000945" rel="noreferrer" target="_blank" style="color:#94a3b8;text-decoration:none">闽公网安备35021202000945号</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+    // FAQ toggle
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+        q.addEventListener('click', function() {
+            var answer = this.nextElementSibling;
+            var arrow = this.querySelector('.faq-arrow');
+            if (answer.style.maxHeight && answer.style.maxHeight !== '0px') {
+                answer.style.maxHeight = '0';
+                answer.style.padding = '0 20px';
+            } else {
+                answer.style.maxHeight = answer.scrollHeight + 32 + 'px';
+                answer.style.padding = '16px 20px';
+            }
+        });
+    });
+    </script>
+</body>
+</html>
