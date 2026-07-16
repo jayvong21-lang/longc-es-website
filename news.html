@@ -165,6 +165,29 @@
             color: #999;
             font-size: 16px;
         }
+
+        /* 无图资讯卡片：覆盖公共样式中遗留的固定图片卡片高度。 */
+        .news-section .news-grid {
+            align-items: start;
+        }
+        .news-section .news-card {
+            display: block !important;
+            height: auto !important;
+            min-height: 0 !important;
+        }
+        .news-section .news-card .news-content {
+            height: auto !important;
+            min-height: 0 !important;
+            padding: 22px !important;
+        }
+        .news-section .news-card .news-summary {
+            min-height: 0 !important;
+            margin-bottom: 18px !important;
+        }
+        .news-section .news-card .news-link {
+            width: auto !important;
+            margin-top: 0 !important;
+        }
     </style>
 </head>
 <body>
