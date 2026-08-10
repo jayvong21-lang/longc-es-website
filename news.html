@@ -1,321 +1,632 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>资讯中心 - 龙溪企服 LongC-ES</title>
-    <meta name="description" content="龙溪企服资讯中心，提供厦门同安写字楼厂房招商动态、财税政策解读、企业服务资讯、行业新闻等">
-    <meta name="keywords" content="厦门同安写字楼,厦门厂房出租,环东海域招商,厦门中小企业政策,龙溪企服">
-    <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>资讯中心 - 龙溪企服 LongC-ES | 厦门企业服务资讯</title>
+    <meta
+      content="龙溪企服资讯中心，提供厦门写字楼厂房招商动态、财税政策解读、中小企业服务资讯、行业新闻等"
+      name="description"
+    />
+    <meta
+      content="厦门写字楼,厦门厂房出租,厦门中小企业政策,龙溪企服,财税政策,企业服务资讯"
+      name="keywords"
+    />
+    <link href="https://www.longc-es.com/news.html" rel="canonical" />
+    <meta
+      content="资讯中心 - 龙溪企服 LongC-ES | 厦门企业服务资讯"
+      property="og:title"
+    />
+    <meta
+      content="龙溪企服资讯中心，提供厦门写字楼厂房招商动态、财税政策解读、中小企业服务资讯等"
+      property="og:description"
+    />
+    <meta content="https://www.longc-es.com/news.html" property="og:url" />
+    <meta content="website" property="og:type" />
+    <meta content="zh_CN" property="og:locale" />
+    <meta content="summary" name="twitter:card" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link href="css/style.css?v=20260804-layout1" rel="stylesheet" />
     <style>
-        /* ===== 筛选栏 ===== */
+      /* ===== 筛选栏 ===== */
+      .news-filter {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 30px 0;
+        justify-content: center;
+      }
+      .news-filter .filter-btn {
+        padding: 8px 20px;
+        border: 1.5px solid #1e3a5f;
+        border-radius: 20px;
+        background: #fff;
+        color: #1e3a5f;
+        cursor: pointer;
+        font-size: 14px;
+        transition: all 0.3s;
+      }
+      .news-filter .filter-btn:hover,
+      .news-filter .filter-btn.active {
+        background: #1e3a5f;
+        color: #fff;
+      }
+
+      /* ===== 新闻网格 ===== */
+      .news-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+      .news-card {
+        background: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s;
+      }
+      .news-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+      }
+      .news-card .news-content {
+        padding: 26px;
+      }
+      .news-card .news-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      .news-card .news-category {
+        display: inline-block;
+        padding: 3px 10px;
+        background: #e8f0fe;
+        color: #1e3a5f;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: 500;
+      }
+      .news-card .news-date {
+        color: #999;
+        font-size: 13px;
+      }
+      .news-card .news-title {
+        font-size: 17px;
+        font-weight: 600;
+        color: #222;
+        line-height: 1.5;
+        margin-bottom: 10px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      .news-card .news-summary {
+        color: #666;
+        font-size: 14px;
+        line-height: 1.7;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        margin-bottom: 12px;
+      }
+      .news-card .news-link {
+        color: #1e3a5f;
+        font-weight: 500;
+        text-decoration: none;
+        font-size: 14px;
+      }
+      .news-card .news-link:hover {
+        text-decoration: underline;
+      }
+
+      /* ===== 分页 ===== */
+      .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 40px 0;
+      }
+      .pagination .page-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        color: #333;
+        text-decoration: none;
+        font-size: 14px;
+        transition: all 0.3s;
+      }
+      .pagination .page-link:hover {
+        border-color: #1e3a5f;
+        color: #1e3a5f;
+      }
+      .pagination .page-link.active {
+        background: #1e3a5f;
+        color: #fff;
+        border-color: #1e3a5f;
+        pointer-events: none;
+      }
+      .pagination .page-link.prev,
+      .pagination .page-link.next {
+        width: auto;
+        padding: 0 16px;
+      }
+      .pagination .page-info {
+        font-size: 14px;
+        color: #999;
+        margin-left: 10px;
+      }
+
+      /* ===== 响应式 ===== */
+      @media (max-width: 768px) {
+        .news-grid {
+          grid-template-columns: 1fr;
+        }
         .news-filter {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin: 30px 0;
-            justify-content: center;
+          gap: 8px;
         }
         .news-filter .filter-btn {
-            padding: 8px 20px;
-            border: 1.5px solid #1e3a5f;
-            border-radius: 20px;
-            background: #fff;
-            color: #1e3a5f;
-            cursor: pointer;
-            font-size: 14px;
-            transition: all 0.3s;
+          padding: 6px 14px;
+          font-size: 13px;
         }
-        .news-filter .filter-btn:hover,
-        .news-filter .filter-btn.active {
-            background: #1e3a5f;
-            color: #fff;
-        }
+      }
 
-        /* ===== 新闻网格 ===== */
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
+      .news-card.hidden {
+        display: none;
+      }
+      .news-card.fade-in {
+        animation: fadeInUp 0.5s ease;
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
         }
-        .news-card {
-            background: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
-        .news-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-        }
-        .news-card .news-content {
-            padding: 26px;
-        }
-        .news-card .news-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-        .news-card .news-category {
-            display: inline-block;
-            padding: 3px 10px;
-            background: #e8f0fe;
-            color: #1e3a5f;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: 500;
-        }
-        .news-card .news-date {
-            color: #999;
-            font-size: 13px;
-        }
-        .news-card .news-title {
-            font-size: 17px;
-            font-weight: 600;
-            color: #222;
-            line-height: 1.5;
-            margin-bottom: 10px;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-        .news-card .news-summary {
-            color: #666;
-            font-size: 14px;
-            line-height: 1.7;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            margin-bottom: 12px;
-        }
-        .news-card .news-link {
-            color: #1e3a5f;
-            font-weight: 500;
-            text-decoration: none;
-            font-size: 14px;
-        }
-        .news-card .news-link:hover {
-            text-decoration: underline;
-        }
+      }
+      .no-results {
+        grid-column: 1 / -1;
+        text-align: center;
+        padding: 60px 20px;
+        color: #999;
+        font-size: 16px;
+      }
 
-        /* ===== 分页 ===== */
-        .pagination {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 40px 0;
-        }
-        .pagination .page-link {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            color: #333;
-            text-decoration: none;
-            font-size: 14px;
-            transition: all 0.3s;
-        }
-        .pagination .page-link:hover {
-            border-color: #1e3a5f;
-            color: #1e3a5f;
-        }
-        .pagination .page-link.active {
-            background: #1e3a5f;
-            color: #fff;
-            border-color: #1e3a5f;
-            pointer-events: none;
-        }
-        .pagination .page-link.prev,
-        .pagination .page-link.next {
-            width: auto;
-            padding: 0 16px;
-        }
-        .pagination .page-info {
-            font-size: 14px;
-            color: #999;
-            margin-left: 10px;
-        }
-
-        /* ===== 响应式 ===== */
-        @media (max-width: 768px) {
-            .news-grid { grid-template-columns: 1fr; }
-            .news-filter { gap: 8px; }
-            .news-filter .filter-btn { padding: 6px 14px; font-size: 13px; }
-        }
-
-        .news-card.hidden { display: none; }
-        .news-card.fade-in { animation: fadeInUp 0.5s ease; }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-        .no-results {
-            grid-column: 1 / -1;
-            text-align: center;
-            padding: 60px 20px;
-            color: #999;
-            font-size: 16px;
-        }
-
-        /* 无图资讯卡片：覆盖公共样式中遗留的固定图片卡片高度。 */
-        .news-section .news-grid {
-            align-items: start;
-        }
-        .news-section .news-card {
-            display: block !important;
-            height: auto !important;
-            min-height: 0 !important;
-        }
-        .news-section .news-card .news-content {
-            height: auto !important;
-            min-height: 0 !important;
-            padding: 22px !important;
-        }
-        .news-section .news-card .news-summary {
-            min-height: 0 !important;
-            margin-bottom: 18px !important;
-        }
-        .news-section .news-card .news-link {
-            width: auto !important;
-            margin-top: 0 !important;
-        }
+      /* 无图资讯卡片：覆盖公共样式中遗留的固定图片卡片高度。 */
+      .news-section .news-grid {
+        align-items: start;
+      }
+      .news-section .news-card {
+        display: block !important;
+        height: auto !important;
+        min-height: 0 !important;
+      }
+      .news-section .news-card .news-content {
+        height: auto !important;
+        min-height: 0 !important;
+        padding: 22px !important;
+      }
+      .news-section .news-card .news-summary {
+        min-height: 0 !important;
+        margin-bottom: 18px !important;
+      }
+      .news-section .news-card .news-link {
+        width: auto !important;
+        margin-top: 0 !important;
+      }
     </style>
-</head>
-<body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                <a href="index.html">
-                    <span class="logo-cn">龙溪企服</span>
-                    <span class="logo-en">LongC-ES</span>
-                </a>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html">首页</a></li>
-                <li><a href="about.html">关于我们</a></li>
-                <li><a href="investment.html">招商运营</a></li>
-                <li><a href="services.html">企业服务</a></li>
-                <li><a href="news.html" class="active">资讯中心</a></li>
-                <li><a href="enterprises.html">入驻企业</a></li>
-                <li><a href="contact.html">联系我们</a></li>
-            </ul>
-            <div class="hamburger"><span></span><span></span><span></span></div>
+    <link href="css/guide-static.css?v=20260804-layout1" rel="stylesheet" />
+  </head>
+  <body class="guide-static">
+    <main class="_page_1izqy_1" id="top">
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "WebPage",
+              "@id": "https://www.longc-es.com/news.html#webpage",
+              "url": "https://www.longc-es.com/news.html",
+              "name": "资讯中心｜厦门招商，企业服务与产业动态。",
+              "description": "发布厦门写字楼招商、企业服务、厂房招商、产业园区政策和中小企业经营相关资讯，并保留发布日期与来源链接。",
+              "inLanguage": "zh-CN",
+              "about": { "@id": "https://www.longc-es.com/#organization" }
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "龙溪企服",
+                  "item": "https://www.longc-es.com/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "资讯中心｜厦门招商，企业服务与产业动态。",
+                  "item": "https://www.longc-es.com/news.html"
+                }
+              ]
+            },
+            {
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "龙溪企服资讯主要关注哪些内容？",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "主要关注厦门产业园区和中小企业政策、写字楼厂房动态、行业报告，以及同安西柯和环东海域等重点片区进展。"
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "官网资讯如何保证来源可核验？",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "每条发布内容保留来源日期和来源链接，并在发布前检查时效、重复事件、摘要信息量和企业经营关联。"
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "项目周边动态会持续更新吗？",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "会持续关注龙溪商务中心、美峰创谷合美大厦和环东中心周边的交通、产业、政策、招商和配套进展。"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      </script>
+      <div class="_utility_t3ymp_1">
+        <span>厦门本地企业空间与经营服务</span>
+        <div>
+          <a href="tel:18016526868">黄 180 1652 6868</a><i></i
+          ><a href="tel:17750587110">李 177 5058 7110</a>
         </div>
-    </nav>
-
-    <section class="page-header">
-        <div class="container">
-            <h1>资讯中心</h1>
-            <p class="breadcrumb"><a href="index.html">首页</a> / 资讯中心</p>
+      </div>
+      <header class="_header_t3ymp_1">
+        <a aria-label="龙溪企服首页" class="_brand_t3ymp_1" href="index.html"
+          ><span aria-hidden="true" class="_brandImage_t3ymp_7"></span
+        ></a>
+        <nav>
+          <a href="services.html">企业服务</a
+          ><a href="investment.html">招商合作</a
+          ><a href="properties.html">重点项目</a
+          ><a href="services.html#agent-accounting-license">资质公示</a
+          ><a aria-current="page" href="news.html">资讯中心</a>
+        </nav>
+        <a class="_headerCta_t3ymp_1" href="tel:18016526868">告诉我们需求</a
+        ><a class="_menu_t3ymp_1" href="tel:18016526868">咨询</a>
+      </header>
+      <section class="_hero_1izqy_1">
+        <div>
+          <span class="_eyebrow_1izqy_1">厦门企业资讯</span>
+          <h1>
+            <span>厦门企业政策、</span><span>园区和办公市场动态</span>
+          </h1>
+          <p>
+            只整理与企业经营或选址直接相关的信息，包括政策申报、园区建设、写字楼和厂房市场。每条内容保留日期和来源链接。
+          </p>
         </div>
-    </section>
-
-    <section class="news-section">
-        <div class="container">
+        <aside>
+          <span>龙溪企服</span><b>厦门本地<br />企业服务与房源咨询</b
+          ><a href="tel:18016526868">黄经理 180 1652 6868　→</a>
+        </aside>
+      </section>
+      <nav class="_sectionNav_1izqy_1" id="sub-nav">
+        <a href="#overview">栏目说明</a><a href="#items">近期关注</a
+        ><a href="#process">选稿标准</a><a href="#contact">联系</a>
+      </nav>
+      <section class="_overview_1izqy_1" id="overview">
+        <h2><span>只看和企业经营、</span><span>选址有关的消息。</span></h2>
+        <div>
+          <p>
+            内容覆盖企业税费、融资服务、产业项目建设、写字楼与厂房市场，以及同安西柯、官浔、环东海域和厦门科学城动态。
+          </p>
+          <strong>没有明确来源，或与企业经营关系不大的内容不发布。</strong>
+        </div>
+      </section>
+      <section class="_items_1izqy_1" id="items">
+        <div class="_sectionTitle_1izqy_1">
+          <span>近期关注</span>
+          <h2>近期值得关注的内容</h2>
+        </div>
+        <div class="_cardGrid_1izqy_1">
+          <article>
+            <span>01</span>
+            <h3>“六税两费”申报热点问答</h3>
+            <p>小微企业可在电子税务局按不同税种流程填报享受减免优惠。</p>
+            <a href="#all-news">查看相关资讯　→</a>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>科技金融助企服务对接</h3>
+            <p>
+              农行厦门分行联合机构走进火炬高新区，为企业解读政策并定制融资方案。
+            </p>
+            <a href="#all-news">查看相关资讯　→</a>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>厦门研发生产基地项目封顶</h3>
+            <p>伟卓科技厦门研发生产基地和科锐特总部中心主体结构全面封顶。</p>
+            <a href="#all-news">查看相关资讯　→</a>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>厦门写字楼与厂房动态</h3>
+            <p>持续关注租金、空置率、新增供应和产业载体招商进展。</p>
+            <a href="#all-news">查看相关资讯　→</a>
+          </article>
+        </div>
+      </section>
+      <section class="_feature_1izqy_1">
+        <div class="_featureImage_1izqy_1">
+          <img
+            alt="厦门企业资讯来源说明"
+            data-nimg="fill"
+            decoding="async"
+            loading="lazy"
+            sizes="(max-width: 800px) 100vw, 50vw"
+            src="/images/avic-exterior.jpg"
+            style="
+              position: absolute;
+              inset: 0;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            "
+          />
+        </div>
+        <div class="_featureCopy_1izqy_1">
+          <span>发布说明</span>
+          <h2>每条资讯都标明日期和来源</h2>
+          <p>
+            发布前检查来源、日期、重复事件和摘要内容。政策办理仍以主管部门正式文件为准。
+          </p>
+          <ul>
+            <li>来源链接可核验</li>
+            <li>标明信息发布日期</li>
+            <li>重复事件不反复发布</li>
+          </ul>
+          <a href="#all-news">查看全部资讯　→</a>
+        </div>
+      </section>
+      <section class="_process_1izqy_1" id="process">
+        <div class="_sectionTitle_1izqy_1">
+          <span>选稿标准</span>
+          <h2>什么内容会发布</h2>
+        </div>
+        <ol>
+          <li>
+            <span>0<!-- -->1</span><b>厦门政府和园区公开信息</b>
+          </li>
+          <li>
+            <span>0<!-- -->2</span><b>与企业经营或选址直接相关</b>
+          </li>
+          <li>
+            <span>0<!-- -->3</span><b>来源、日期和事实可以核对</b>
+          </li>
+          <li>
+            <span>0<!-- -->4</span><b>摘要说明对企业有什么影响</b>
+          </li>
+        </ol>
+        <p>
+          政策与市场信息具有时效性，实际办理和投资决策请以主管部门及交易文件为准。
+        </p>
+      </section>
+      <section class="guide-preserved-content" id="all-news">
+        <header class="guide-preserved-heading">
+          <span>资讯列表</span>
+          <h2>全部资讯</h2>
+          <p>按发布时间排列，点击可查看摘要、日期和来源。</p>
+        </header>
+        <section class="news-section">
+          <div class="container">
             <div class="news-filter" id="newsFilter">
-                <button class="filter-btn active" data-cat="all">全部</button>
-                <button class="filter-btn" data-cat="行业动态">行业动态</button>
-                <button class="filter-btn" data-cat="招商资讯">招商资讯</button>
-                <button class="filter-btn" data-cat="政策解读">政策解读</button>
-                <button class="filter-btn" data-cat="企业服务">企业服务</button>
-                <button class="filter-btn" data-cat="公司动态">公司动态</button>
+              <button class="filter-btn active" data-cat="all">全部</button>
+              <button class="filter-btn" data-cat="行业动态">行业动态</button>
+              <button class="filter-btn" data-cat="招商资讯">招商资讯</button>
+              <button class="filter-btn" data-cat="政策解读">政策解读</button>
+              <button class="filter-btn" data-cat="企业服务">企业服务</button>
+              <button class="filter-btn" data-cat="公司动态">公司动态</button>
             </div>
             <div class="news-grid" id="newsGrid"></div>
             <div class="pagination" id="pagination"></div>
+          </div>
+        </section>
+      </section>
+      <section class="_faq_1izqy_4">
+        <div class="_sectionTitle_1izqy_1">
+          <span>常见问题</span>
+          <h2>客户常问的问题</h2>
         </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <span class="logo-cn">龙溪企服</span>
-                        <span class="logo-en">LongC-ES</span>
-                    </div>
-                    <p class="footer-desc">厦门龙溪传芳企业服务有限公司，专业提供写字楼商业体招商运营、财务代理记账、工商注册等企业服务。</p>
-                </div>
-                <div class="footer-links">
-                    <h4>快速链接</h4>
-                    <ul>
-                        <li><a href="index.html">首页</a></li>
-                        <li><a href="about.html">关于我们</a></li>
-                        <li><a href="investment.html">招商运营</a></li>
-                        <li><a href="services.html">企业服务</a></li>
-                        <li><a href="news.html">资讯中心</a></li>
-                        <li><a href="enterprises.html">入驻企业</a></li>
-                        <li><a href="contact.html">联系我们</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4>联系方式</h4>
-                    <ul>
-                        <li><span class="contact-icon">📍</span><span>厦门市同安区西洲路1299号龙溪商务中心</span></li>
-                        <li><span class="contact-icon">📞</span><span>18506951837 (黄生)</span></li>
-                        <li><span class="contact-icon">📧</span><span>2029736860@qq.com</span></li>
-                    </ul>
-                </div>
+        <div>
+          <article>
+            <span>0<!-- -->1</span>
+            <div>
+              <h3>龙溪企服资讯主要关注哪些内容？</h3>
+              <p>
+                主要关注厦门产业园区和中小企业政策、写字楼厂房动态、行业报告，以及同安西柯和环东海域等重点片区进展。
+              </p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 厦门龙溪传芳企业服务有限公司 版权所有 | 龙溪企服 LongC-ES</p>
-                <p style="font-size:12px;color:#94a3b8;margin-top:4px"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" style="color:#94a3b8;text-decoration:none">闽ICP备2026020749号</a></p>
+          </article>
+          <article>
+            <span>0<!-- -->2</span>
+            <div>
+              <h3>官网资讯如何保证来源可核验？</h3>
+              <p>
+                每条发布内容保留来源日期和来源链接，并在发布前检查时效、重复事件、摘要信息量和企业经营关联。
+              </p>
             </div>
+          </article>
+          <article>
+            <span>0<!-- -->3</span>
+            <div>
+              <h3>项目周边动态会持续更新吗？</h3>
+              <p>
+                会持续关注龙溪商务中心、美峰创谷合美大厦和环东中心周边的交通、产业、政策、招商和配套进展。
+              </p>
+            </div>
+          </article>
         </div>
-    </footer>
-
-    <script src="js/news-data.js?v=20260613"></script>
+      </section>
+      <section class="_contact_1izqy_1" id="contact">
+        <div>
+          <span>需要办理业务或查询房源？</span>
+          <h2>直接联系对应顾问</h2>
+          <p>企业服务找黄经理，房源和招商合作找李经理。</p>
+        </div>
+        <div>
+          <a href="tel:18016526868"
+            ><small>企业服务</small><b>黄经理　180 1652 6868</b></a
+          ><a href="tel:17750587110"
+            ><small>房源与招商</small><b>李经理　177 5058 7110</b></a
+          >
+        </div>
+      </section>
+      <footer class="_footer_t3ymp_1">
+        <a aria-label="龙溪企服首页" class="_brand_t3ymp_1" href="index.html"
+          ><span aria-hidden="true" class="_brandImage_t3ymp_7"></span
+        ></a>
+        <div>
+          <b>业务入口</b><a href="services.html">企业服务</a
+          ><a href="properties.html">重点项目</a
+          ><a href="investment.html">招商合作</a>
+        </div>
+        <div>
+          <b>信息入口</b
+          ><a href="services.html#agent-accounting-license">资质公示</a
+          ><a href="news.html">资讯中心</a
+          ><a href="https://www.longc-es.com/contact.html">联系我们</a>
+        </div>
+        <div class="_footerAddress_t3ymp_1">
+          <b>厦门龙溪传芳企业服务有限公司</b
+          ><span>黄 18016526868　李 17750587110</span
+          ><a
+            href="https://beian.miit.gov.cn/"
+            rel="noopener noreferrer"
+            target="_blank"
+            >闽ICP备2026020749号</a
+          ><a
+            href="https://beian.mps.gov.cn/#/query/webSearch?code=35021202000945"
+            rel="noopener noreferrer"
+            target="_blank"
+            >闽公网安备35021202000945号</a
+          >
+        </div>
+        <p>
+          © 2026 LONGC ENTERPRISE SERVICE · 具体服务范围与费用以书面确认内容为准
+        </p>
+      </footer>
+      <div class="_mobileDock_t3ymp_1">
+        <a href="tel:18016526868">企业服务</a
+        ><a href="tel:17750587110">预约看房</a>
+      </div>
+    </main>
+    <script src="js/news-data.js?v=20260617a"></script>
     <script>
-    const PAGE_SIZE = 6;
-    let cp = 1, cc = 'all';
-    function render(){
-        const g=document.getElementById('newsGrid'), d=cc==='all'?NEWS_DATA:NEWS_DATA.filter(a=>a.category===cc);
-        const tp=Math.ceil(d.length/PAGE_SIZE)||1; if(cp>tp)cp=tp;
-        const s=(cp-1)*PAGE_SIZE, p=d.slice(s,s+PAGE_SIZE);
-        g.innerHTML=p.length?p.map(a=>`
+      const PAGE_SIZE = 6;
+      let cp = 1,
+        cc = "all";
+      function render() {
+        const g = document.getElementById("newsGrid"),
+          d =
+            cc === "all"
+              ? NEWS_DATA
+              : NEWS_DATA.filter((a) => a.category === cc);
+        const tp = Math.ceil(d.length / PAGE_SIZE) || 1;
+        if (cp > tp) cp = tp;
+        const s = (cp - 1) * PAGE_SIZE,
+          p = d.slice(s, s + PAGE_SIZE);
+        g.innerHTML = p.length
+          ? p
+              .map(
+                (a) => `
             <article class="news-card fade-in">
                 <div class="news-content">
                     <div class="news-meta"><span class="news-category">${a.category}</span><span class="news-date">${a.date}</span></div>
                     <h3 class="news-title">${a.title}</h3>
                     <p class="news-summary">${a.summary}</p>
-                    <a href="news-detail.html?id=${a.id}" class="news-link">阅读更多 →</a>
+                    <a href="news-detail.html?id=${a.id}" class="news-link">查看详情 → 了解${a.category}相关资讯</a>
                 </div>
-            </article>`).join(''):'<div class="no-results">当前分类暂无内容，敬请期待</div>';
-        const pg=document.getElementById('pagination');
-        if(tp<=1){pg.innerHTML='';return;}
-        let html='';
-        html+=`<a href="#" class="page-link prev" data-page="${cp-1}" ${cp<=1?'style="pointer-events:none;color:#ccc"':''}>上一页</a>`;
-        for(let i=1;i<=tp;i++){
-            if(i===cp) html+=`<span class="page-link active">${i}</span>`;
-            else if(i===1||i===tp||Math.abs(i-cp)<=1) html+=`<a href="#" class="page-link" data-page="${i}">${i}</a>`;
-            else if(i===cp-2||i===cp+2) html+=`<span class="page-link" style="border:none;pointer-events:none">…</span>`;
+            </article>`,
+              )
+              .join("")
+          : '<div class="no-results">当前分类暂无内容，敬请期待</div>';
+        const pg = document.getElementById("pagination");
+        if (tp <= 1) {
+          pg.innerHTML = "";
+          return;
         }
-        html+=`<a href="#" class="page-link next" data-page="${cp+1}" ${cp>=tp?'style="pointer-events:none;color:#ccc"':''}>下一页</a>`;
-        html+=`<span class="page-info">共 ${tp} 页 / ${NEWS_DATA.length} 篇</span>`;
-        pg.innerHTML=html;
-    }
-    document.addEventListener('DOMContentLoaded',function(){
+        let html = "";
+        html += `<a href="#" class="page-link prev" data-page="${cp - 1}" ${cp <= 1 ? 'style="pointer-events:none;color:#ccc"' : ""}>上一页</a>`;
+        for (let i = 1; i <= tp; i++) {
+          if (i === cp) html += `<span class="page-link active">${i}</span>`;
+          else if (i === 1 || i === tp || Math.abs(i - cp) <= 1)
+            html += `<a href="#" class="page-link" data-page="${i}">${i}</a>`;
+          else if (i === cp - 2 || i === cp + 2)
+            html += `<span class="page-link" style="border:none;pointer-events:none">…</span>`;
+        }
+        html += `<a href="#" class="page-link next" data-page="${cp + 1}" ${cp >= tp ? 'style="pointer-events:none;color:#ccc"' : ""}>下一页</a>`;
+        html += `<span class="page-info">共 ${tp} 页 / ${NEWS_DATA.length} 篇</span>`;
+        pg.innerHTML = html;
+      }
+      document.addEventListener("DOMContentLoaded", function () {
         render();
-        document.getElementById('newsFilter').addEventListener('click',function(e){
-            if(e.target.classList.contains('filter-btn')){
-                document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-                e.target.classList.add('active'); cc=e.target.dataset.cat; cp=1; render();
+        document
+          .getElementById("newsFilter")
+          .addEventListener("click", function (e) {
+            if (e.target.classList.contains("filter-btn")) {
+              document
+                .querySelectorAll(".filter-btn")
+                .forEach((b) => b.classList.remove("active"));
+              e.target.classList.add("active");
+              cc = e.target.dataset.cat;
+              cp = 1;
+              render();
             }
-        });
-        document.getElementById('pagination').addEventListener('click',function(e){
-            const l=e.target.closest('.page-link'); if(!l)return; e.preventDefault();
-            const p=parseInt(l.dataset.page); if(p&&p>=1){cp=p;render();window.scrollTo({top:document.querySelector('.news-section').offsetTop-100,behavior:'smooth'});}
-        });
-    });
+          });
+        document
+          .getElementById("pagination")
+          .addEventListener("click", function (e) {
+            const l = e.target.closest(".page-link");
+            if (!l) return;
+            e.preventDefault();
+            const p = parseInt(l.dataset.page);
+            if (p && p >= 1) {
+              cp = p;
+              render();
+              window.scrollTo({
+                top: document.querySelector(".news-section").offsetTop - 100,
+                behavior: "smooth",
+              });
+            }
+          });
+      });
     </script>
-    <script src="js/main.js"></script>
-</body>
+    <script src="js/guide-static.js?v=20260804-layout1"></script>
+  </body>
 </html>
