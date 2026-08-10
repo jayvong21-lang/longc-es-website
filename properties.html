@@ -1,0 +1,917 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>合作项目 - 龙溪企服 LongC-ES | 厦门写字楼厂房招商合作</title>
+    <meta
+      content="龙溪企服合作项目，按厦门各区整理写字楼与产业空间项目，展示项目面积、价格范围与可租房源数量。"
+      name="description"
+    />
+    <meta
+      content="厦门写字楼出租,厦门厂房出租,厦门招商合作,合作项目,龙溪企服"
+      name="keywords"
+    />
+    <link href="https://www.longc-es.com/properties.html" rel="canonical" />
+    <meta
+      content="合作项目 - 龙溪企服 LongC-ES | 厦门写字楼厂房招商合作"
+      property="og:title"
+    />
+    <meta
+      content="龙溪企服合作项目，按区域与项目名称整理厦门优质写字楼与产业空间。"
+      property="og:description"
+    />
+    <meta
+      content="https://www.longc-es.com/properties.html"
+      property="og:url"
+    />
+    <meta content="website" property="og:type" />
+    <meta content="zh_CN" property="og:locale" />
+    <meta content="summary" name="twitter:card" />
+    <link href="css/style.css?v=20260804-layout1" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ====================================
+           合作项目页专用样式
+           ==================================== */
+      .properties-section {
+        background: #ffffff;
+      }
+      .property-stats {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+        margin: 10px auto 34px;
+      }
+      .stat-card {
+        background: linear-gradient(
+          135deg,
+          #1a3a5c 0%,
+          #244d76 58%,
+          #102842 100%
+        );
+        border-radius: 8px;
+        padding: 24px 18px 22px;
+        color: #ffffff;
+        text-align: center;
+        box-shadow: 0 12px 30px rgba(26, 58, 92, 0.18);
+        position: relative;
+        overflow: hidden;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .stat-card::after {
+        content: "";
+        position: absolute;
+        left: 18px;
+        right: 18px;
+        bottom: 0;
+        height: 3px;
+        background: #c9a96e;
+      }
+      .stat-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 36px rgba(26, 58, 92, 0.26);
+      }
+      .stat-number {
+        color: #ffffff !important;
+        font-size: 34px;
+        font-weight: 800;
+        line-height: 1.15;
+        letter-spacing: 0;
+        white-space: nowrap;
+      }
+      .stat-label {
+        color: rgba(255, 255, 255, 0.86) !important;
+        font-size: 13px;
+        margin-top: 8px;
+        font-weight: 400;
+      }
+      .properties-filter {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+        margin: 0 0 34px;
+      }
+      .filter-btn {
+        padding: 8px 24px;
+        border: 1px solid var(--gray-200);
+        border-radius: 4px;
+        background: var(--white);
+        color: var(--gray-600);
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.25s ease;
+        font-family: var(--font-family);
+      }
+      .filter-btn:hover {
+        border-color: #c9a96e;
+        color: #1a3a5c;
+        box-shadow: 0 6px 16px rgba(26, 58, 92, 0.08);
+      }
+      .filter-btn.active {
+        background: #1a3a5c;
+        border-color: #1a3a5c;
+        color: #ffffff;
+      }
+      .district-section {
+        margin-bottom: 38px;
+      }
+      .district-heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 16px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--gray-200);
+      }
+      .district-heading h3 {
+        margin: 0;
+        color: #1a3a5c;
+        font-size: 22px;
+        font-weight: 700;
+      }
+      .district-count {
+        color: var(--gray-500);
+        font-size: 14px;
+      }
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+      .project-card {
+        background: #ffffff;
+        border: 1px solid var(--gray-200);
+        border-radius: 8px;
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+        padding: 22px 22px 20px;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease,
+          border-color 0.3s ease;
+      }
+      .project-card:hover {
+        transform: translateY(-3px);
+        border-color: rgba(201, 169, 110, 0.65);
+        box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12);
+      }
+      .project-name {
+        margin: 0 0 14px;
+        color: #1a3a5c;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.35;
+      }
+      .project-metrics {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .project-metric {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        padding-top: 10px;
+        border-top: 1px solid var(--gray-100);
+      }
+      .metric-label {
+        color: var(--gray-400);
+        font-size: 12px;
+        white-space: nowrap;
+      }
+      .metric-value {
+        color: var(--gray-700);
+        font-size: 15px;
+        font-weight: 650;
+        text-align: right;
+        line-height: 1.35;
+      }
+      .metric-value.price {
+        color: #b8872b;
+      }
+      .property-contact-bar {
+        text-align: center;
+        margin-top: 50px;
+        padding: 24px;
+        background: linear-gradient(135deg, #1a3a5c 0%, #244d76 100%);
+        border-radius: 8px;
+        color: #ffffff;
+        border-bottom: 3px solid #c9a96e;
+      }
+      .property-contact-bar p {
+        font-size: 18px;
+        font-weight: 500;
+        margin: 0;
+      }
+      .property-contact-bar .sub {
+        font-size: 14px;
+        opacity: 0.85;
+        margin-top: 6px;
+      }
+      .empty-state {
+        text-align: center;
+        padding: 60px 20px;
+        color: var(--gray-400);
+        font-size: 16px;
+      }
+      @media (max-width: 1024px) {
+        .project-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+      @media (max-width: 768px) {
+        .property-stats {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .stat-card {
+          padding: 18px 14px 16px;
+        }
+        .stat-number {
+          font-size: 28px;
+        }
+        .district-heading {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 4px;
+        }
+      }
+      @media (max-width: 480px) {
+        .property-stats,
+        .project-grid {
+          grid-template-columns: 1fr;
+        }
+        .stat-number {
+          font-size: 30px;
+        }
+        .filter-btn {
+          padding: 7px 16px;
+          font-size: 13px;
+        }
+      }
+    </style>
+    <link href="css/guide-static.css?v=20260804-layout1" rel="stylesheet" />
+  </head>
+  <body class="guide-static">
+    <main class="_page_1izqy_1" id="top">
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "WebPage",
+              "@id": "https://www.longc-es.com/properties.html#webpage",
+              "url": "https://www.longc-es.com/properties.html",
+              "name": "合作项目，按区域与面积快速比较。",
+              "description": "按思明、同安和环东海域整理合作项目，帮助企业查看项目地址、面积、装修、适用团队和公开联系方式。",
+              "inLanguage": "zh-CN",
+              "about": { "@id": "https://www.longc-es.com/#organization" }
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "龙溪企服",
+                  "item": "https://www.longc-es.com/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "合作项目，按区域与面积快速比较。",
+                  "item": "https://www.longc-es.com/properties.html"
+                }
+              ]
+            },
+            {
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "龙溪商务中心在哪里？",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "项目位于厦门市同安区西柯街道西洲路1299-9号，临近官浔站，提供办公空间与企业服务配套。"
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "美峰创谷合美大厦适合什么企业？",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "项目位于环东海域和厦门科学城片区，适合关注产业氛围、成长空间和园区配套的企业。"
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "如何查询这些项目的当前房源？",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "联系李经理17750587110，说明人数、预算、区域和注册需求后，由顾问核实当前面积与交付状态。"
+                  }
+                }
+              ]
+            },
+            {
+              "@type": "Place",
+              "name": "龙溪商务中心",
+              "url": "https://www.longc-es.com/longxi-business-center.html",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "西柯街道西洲路1299-9号",
+                "addressLocality": "厦门市",
+                "addressRegion": "福建省",
+                "addressCountry": "CN"
+              },
+              "telephone": "17750587110"
+            },
+            {
+              "@type": "Place",
+              "name": "美峰创谷合美大厦",
+              "url": "https://www.longc-es.com/meifeng-chuanggu-hemei-building.html",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "滨海西大道2555-2577号美峰创谷",
+                "addressLocality": "厦门市",
+                "addressRegion": "福建省",
+                "addressCountry": "CN"
+              },
+              "telephone": "17750587110"
+            },
+            {
+              "@type": "Place",
+              "name": "环东中心",
+              "url": "https://www.longc-es.com/huandong-center.html",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "厦门市",
+                "addressRegion": "福建省",
+                "addressCountry": "CN"
+              },
+              "telephone": "17750587110"
+            },
+            {
+              "@type": "Offer",
+              "name": "中航紫金广场308平方米海景写字楼已出租",
+              "url": "https://www.longc-es.com/avic-zijin-plaza-308-office.html",
+              "seller": { "@id": "https://www.longc-es.com/#organization" },
+              "areaServed": "厦门思明会展片区",
+              "availability": "https://schema.org/OutOfStock"
+            }
+          ]
+        }
+      </script>
+      <div class="_utility_t3ymp_1">
+        <span>厦门本地企业空间与经营服务</span>
+        <div>
+          <a href="tel:18016526868">黄 180 1652 6868</a><i></i
+          ><a href="tel:17750587110">李 177 5058 7110</a>
+        </div>
+      </div>
+      <header class="_header_t3ymp_1">
+        <a aria-label="龙溪企服首页" class="_brand_t3ymp_1" href="index.html"
+          ><span aria-hidden="true" class="_brandImage_t3ymp_7"></span
+        ></a>
+        <nav>
+          <a href="services.html">企业服务</a
+          ><a href="investment.html">招商合作</a
+          ><a aria-current="page" href="properties.html">重点项目</a
+          ><a href="services.html#agent-accounting-license">资质公示</a
+          ><a href="news.html">资讯中心</a>
+        </nav>
+        <a class="_headerCta_t3ymp_1" href="tel:18016526868">告诉我们需求</a
+        ><a class="_menu_t3ymp_1" href="tel:18016526868">咨询</a>
+      </header>
+      <section class="_hero_1izqy_1">
+        <div>
+          <span class="_eyebrow_1izqy_1">SELECTED PROJECTS</span>
+          <h1><span>合作项目，</span><span>按区域与面积快速比较。</span></h1>
+          <p>
+            按思明、同安和环东海域整理合作项目，帮助企业查看项目地址、面积、装修、适用团队和公开联系方式。
+          </p>
+        </div>
+        <aside>
+          <span>LONGC / 2026</span><b>厦门本地<br />企业服务与空间顾问</b
+          ><a href="tel:18016526868">黄经理 180 1652 6868　→</a>
+        </aside>
+      </section>
+      <nav class="_sectionNav_1izqy_1" id="sub-nav">
+        <a href="#overview">栏目说明</a><a href="#items">服务内容</a
+        ><a href="#process">推进流程</a><a href="#contact">联系顾问</a>
+      </nav>
+      <section class="_overview_1izqy_1" id="overview">
+        <h2>
+          <span>龙溪商务中心、合美大厦，</span><span>环东中心与独家房源。</span>
+        </h2>
+        <div>
+          <p>
+            提交面积、预算、区域和入驻时间后，由龙溪企服统一跟进匹配。房源状态、价格与交付条件会动态变化，建议预约后确认。
+          </p>
+          <strong>先核实，再建议；先说清，再推进。</strong>
+        </div>
+      </section>
+      <section class="_items_1izqy_1" id="items">
+        <div class="_sectionTitle_1izqy_1">
+          <span>WHAT WE COVER</span>
+          <h2>本栏目重点内容</h2>
+        </div>
+        <div class="_cardGrid_1izqy_1">
+          <article>
+            <span>01</span>
+            <h3>龙溪商务中心</h3>
+            <p>
+              同安西柯西洲路1299-9号，总建筑面积约12500㎡，提供办公室、注册地址、注册与代账衔接。
+            </p>
+            <a href="tel:18016526868">咨询这项内容　→</a>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>美峰创谷合美大厦</h3>
+            <p>
+              滨海西大道2555—2577号，公开面积约58—355㎡，适合科技研发、商贸、电商及成长型团队。
+            </p>
+            <a href="tel:18016526868">咨询这项内容　→</a>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>环东中心</h3>
+            <p>
+              3栋办公楼总面积约92000㎡，当前可租约88400㎡，包含约10000㎡精装及78400㎡毛坯空间。
+            </p>
+            <a href="tel:18016526868">咨询这项内容　→</a>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>中航紫金广场（已出租）</h3>
+            <p>
+              思明区环岛东路1801号，约308㎡，4个隔间加开阔工区。该套房源已出租，保留为历史成交案例。
+            </p>
+            <a href="avic-zijin-plaza-308-office.html">查看历史房源档案　→</a>
+          </article>
+        </div>
+      </section>
+      <section class="_feature_1izqy_1">
+        <div class="_featureImage_1izqy_1">
+          <img
+            alt="美峰创谷合美大厦当前公开房源"
+            data-nimg="fill"
+            decoding="async"
+            loading="lazy"
+            sizes="(max-width: 800px) 100vw, 50vw"
+            src="/images/hemei-lake.jpg"
+            style="
+              position: absolute;
+              inset: 0;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            "
+          />
+        </div>
+        <div class="_featureCopy_1izqy_1">
+          <span>KEY INFORMATION</span>
+          <h2>美峰创谷合美大厦当前公开房源</h2>
+          <p>
+            官网当前收录约58、88、90、118、128、198、208及355平方米等面积，覆盖小型独立办公室到多人团队办公空间。
+          </p>
+          <ul>
+            <li>58—90㎡适合初创团队</li>
+            <li>118—208㎡适合成长团队</li>
+            <li>约355㎡可核对布局与交付</li>
+          </ul>
+          <a href="tel:17750587110">联系顾问进一步核实　→</a>
+        </div>
+      </section>
+      <section class="_process_1izqy_1" id="process">
+        <div class="_sectionTitle_1izqy_1">
+          <span>HOW IT MOVES</span>
+          <h2>从咨询到落地的四步</h2>
+        </div>
+        <ol>
+          <li>
+            <span>0<!-- -->1</span><b>提交面积、预算和区域</b>
+          </li>
+          <li>
+            <span>0<!-- -->2</span><b>比较位置、通勤与费用</b>
+          </li>
+          <li>
+            <span>0<!-- -->3</span><b>预约查看当期可租单元</b>
+          </li>
+          <li>
+            <span>0<!-- -->4</span><b>核对合同和注册地址条件</b>
+          </li>
+        </ol>
+        <p>项目介绍用于选址参考，不替代现场查验、权属核验和合同审阅。</p>
+      </section>
+      <section class="guide-preserved-content">
+        <header class="guide-preserved-heading">
+          <span>ORIGINAL CONTENT / PRESERVED</span>
+          <h2>全部动态房源</h2>
+          <p>继续加载原房源库数据，面积、区域和状态以页面实时展示为准。</p>
+        </header>
+        <section class="properties-section" style="padding: 60px 0 80px">
+          <div class="container">
+            <div class="section-header">
+              <h2>合作项目清单</h2>
+              <p>
+                按思明、湖里、集美、同安、翔安分区整理，快速查看项目面积、价格与房源数量
+              </p>
+              <p>
+                <a href="project-contacts.html"
+                  ><strong
+                    >查看龙溪商务中心、美峰创谷合美大厦、环东中心联系电话</strong
+                  ></a
+                >
+              </p>
+            </div>
+            <div class="project-grid" style="margin-bottom: 34px">
+              <article class="project-card">
+                <h3 class="project-name">
+                  <a href="longxi-business-center.html">龙溪商务中心</a>
+                </h3>
+                <p>
+                  同安西柯办公空间、注册地址及工商财税配套，适合初创企业和本地经营团队。
+                </p>
+                <a href="longxi-business-center.html">查看项目详情</a>
+              </article>
+              <article class="project-card">
+                <h3 class="project-name">
+                  <a href="meifeng-chuanggu-hemei-building.html"
+                    >美峰创谷合美大厦</a
+                  >
+                </h3>
+                <p>
+                  同安环东海域、厦门科学城片区办公空间，公开房源约58至355平方米。
+                </p>
+                <a href="meifeng-chuanggu-hemei-building.html"
+                  >查看房源与项目详情</a
+                >
+              </article>
+              <article class="project-card">
+                <h3 class="project-name">
+                  <a href="huandong-center.html">环东中心</a>
+                </h3>
+                <p>
+                  同安环东海域大体量产业办公项目，3栋合计约9.2万平方米，提供精装及毛坯空间。
+                </p>
+                <a href="huandong-center.html">查看项目与招商详情</a>
+              </article>
+            </div>
+            <!-- 统计 -->
+            <div class="property-stats" id="propertyStats"></div>
+            <!-- 区域筛选 -->
+            <div class="properties-filter" id="propertiesFilter">
+              <button class="filter-btn active" data-filter="all">全部</button>
+              <button class="filter-btn" data-filter="思明">思明</button>
+              <button class="filter-btn" data-filter="湖里">湖里</button>
+              <button class="filter-btn" data-filter="集美">集美</button>
+              <button class="filter-btn" data-filter="同安">同安</button>
+              <button class="filter-btn" data-filter="翔安">翔安</button>
+            </div>
+            <!-- 房源卡片 -->
+            <div class="properties-grid" id="propertiesGrid"></div>
+            <!-- 联系提醒 -->
+            <div class="property-contact-bar">
+              <p>
+                合作项目对接：黄 <a href="tel:18016526868">18016526868</a> / 李
+                <a href="tel:17750587110">17750587110</a>
+              </p>
+              <div class="sub">
+                项目面积、价格与房源数量均由数据动态汇总，具体信息以现场确认为准
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <section class="_faq_1izqy_4">
+        <div class="_sectionTitle_1izqy_1">
+          <span>DIRECT ANSWERS</span>
+          <h2>客户常问的问题</h2>
+        </div>
+        <div>
+          <article>
+            <span>0<!-- -->1</span>
+            <div>
+              <h3>龙溪商务中心在哪里？</h3>
+              <p>
+                项目位于厦门市同安区西柯街道西洲路1299-9号，临近官浔站，提供办公空间与企业服务配套。
+              </p>
+            </div>
+          </article>
+          <article>
+            <span>0<!-- -->2</span>
+            <div>
+              <h3>美峰创谷合美大厦适合什么企业？</h3>
+              <p>
+                项目位于环东海域和厦门科学城片区，适合关注产业氛围、成长空间和园区配套的企业。
+              </p>
+            </div>
+          </article>
+          <article>
+            <span>0<!-- -->3</span>
+            <div>
+              <h3>如何查询这些项目的当前房源？</h3>
+              <p>
+                联系李经理17750587110，说明人数、预算、区域和注册需求后，由顾问核实当前面积与交付状态。
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="_contact_1izqy_1" id="contact">
+        <div>
+          <span>下一步不需要复杂</span>
+          <h2>把当前情况告诉我们。</h2>
+          <p>企业服务找黄经理，房源与招商合作找李经理。</p>
+        </div>
+        <div>
+          <a href="tel:18016526868"
+            ><small>企业服务</small><b>黄经理　180 1652 6868</b></a
+          ><a href="tel:17750587110"
+            ><small>房源与招商</small><b>李经理　177 5058 7110</b></a
+          >
+        </div>
+      </section>
+      <footer class="_footer_t3ymp_1">
+        <a aria-label="龙溪企服首页" class="_brand_t3ymp_1" href="index.html"
+          ><span aria-hidden="true" class="_brandImage_t3ymp_7"></span
+        ></a>
+        <div>
+          <b>业务入口</b><a href="services.html">企业服务</a
+          ><a href="properties.html">重点项目</a
+          ><a href="investment.html">招商合作</a>
+        </div>
+        <div>
+          <b>信息入口</b
+          ><a href="services.html#agent-accounting-license">资质公示</a
+          ><a href="news.html">资讯中心</a
+          ><a href="https://www.longc-es.com/contact.html">联系我们</a>
+        </div>
+        <div class="_footerAddress_t3ymp_1">
+          <b>厦门龙溪传芳企业服务有限公司</b
+          ><span>黄 18016526868　李 17750587110</span
+          ><a
+            href="https://beian.miit.gov.cn/"
+            rel="noopener noreferrer"
+            target="_blank"
+            >闽ICP备2026020749号</a
+          ><a
+            href="https://beian.mps.gov.cn/#/query/webSearch?code=35021202000945"
+            rel="noopener noreferrer"
+            target="_blank"
+            >闽公网安备35021202000945号</a
+          >
+        </div>
+        <p>
+          © 2026 LONGC ENTERPRISE SERVICE · 具体服务范围与费用以书面确认内容为准
+        </p>
+      </footer>
+      <div class="_mobileDock_t3ymp_1">
+        <a href="tel:18016526868">企业服务</a
+        ><a href="tel:17750587110">预约看房</a>
+      </div>
+    </main>
+    <script src="js/properties-data.js?v=20260717-full-227"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const grid = document.getElementById("propertiesGrid");
+        const stats = document.getElementById("propertyStats");
+        const filterBtns = document.querySelectorAll(".filter-btn");
+        const allProperties = Array.isArray(window.propertiesList)
+          ? window.propertiesList
+          : propertiesList;
+        const districtOrder = ["思明", "湖里", "集美", "同安", "翔安"];
+
+        function formatNumber(value) {
+          return Number(value).toLocaleString("zh-CN", {
+            maximumFractionDigits: 2,
+          });
+        }
+
+        function formatRange(values, unit) {
+          const nums = values
+            .map(Number)
+            .filter((value) => Number.isFinite(value) && value > 0);
+          if (!nums.length) return "面议";
+          const min = Math.min(...nums);
+          const max = Math.max(...nums);
+          if (min === max) return formatNumber(min) + unit;
+          return formatNumber(min) + "-" + formatNumber(max) + unit;
+        }
+
+        function escapeHtml(value) {
+          return String(value || "").replace(/[&<>"']/g, function (char) {
+            return {
+              "&": "&amp;",
+              "<": "&lt;",
+              ">": "&gt;",
+              '"': "&quot;",
+              "'": "&#39;",
+            }[char];
+          });
+        }
+
+        function getProjectName(item) {
+          const name = item.building_name || "未命名项目";
+          if (name.startsWith("翠林(厦门)中心")) {
+            return "翠林(厦门)中心";
+          }
+          if (name.startsWith("银城智谷")) {
+            return "银城智谷";
+          }
+          if (name.startsWith("顶翔建业大厦A栋")) {
+            return "顶翔建业大厦A栋";
+          }
+          const softwareMatch = name.match(/软件园三期\s*([ABCDF])\s*\d*/i);
+          if (softwareMatch) {
+            return "软件园三期" + softwareMatch[1].toUpperCase() + "区";
+          }
+          return name;
+        }
+
+        function getProjectSortValue(name) {
+          const softwareMatch = name.match(/^软件园三期([ABCDF])区$/);
+          if (softwareMatch) {
+            const zoneOrder = { A: 1, B: 2, C: 3, D: 4, F: 5 };
+            return "软件园三期" + zoneOrder[softwareMatch[1]];
+          }
+          return name;
+        }
+
+        function groupProjects(list) {
+          const projectMap = new Map();
+          list.forEach((item) => {
+            const district = item.district || "待确认";
+            const name = getProjectName(item);
+            const key = district + "|" + name;
+            if (!projectMap.has(key)) {
+              projectMap.set(key, {
+                district: district,
+                name: name,
+                units: [],
+              });
+            }
+            projectMap.get(key).units.push(item);
+          });
+
+          const districts = new Map();
+          Array.from(projectMap.values()).forEach((project) => {
+            if (!districts.has(project.district))
+              districts.set(project.district, []);
+            districts.get(project.district).push(project);
+          });
+
+          districts.forEach((projects) => {
+            projects.sort((a, b) =>
+              getProjectSortValue(a.name).localeCompare(
+                getProjectSortValue(b.name),
+                "zh-CN",
+              ),
+            );
+          });
+
+          return districtOrder
+            .filter((district) => districts.has(district))
+            .map((district) => ({
+              district: district,
+              projects: districts.get(district),
+            }))
+            .concat(
+              Array.from(districts.keys())
+                .filter((district) => !districtOrder.includes(district))
+                .sort((a, b) => a.localeCompare(b, "zh-CN"))
+                .map((district) => ({
+                  district: district,
+                  projects: districts.get(district),
+                })),
+            );
+        }
+
+        function renderStats() {
+          const projects = groupProjects(allProperties).reduce(
+            (sum, section) => sum + section.projects.length,
+            0,
+          );
+          stats.innerHTML = [
+            '<div class="stat-card"><div class="stat-number">' +
+              formatNumber(projects) +
+              '</div><div class="stat-label">合作项目总数</div></div>',
+            '<div class="stat-card"><div class="stat-number">' +
+              formatNumber(allProperties.length) +
+              '</div><div class="stat-label">可租房源数量</div></div>',
+            '<div class="stat-card"><div class="stat-number">' +
+              formatRange(
+                allProperties.map((p) => p.area_m2),
+                "",
+              ) +
+              '</div><div class="stat-label">面积范围 (㎡)</div></div>',
+            '<div class="stat-card"><div class="stat-number">' +
+              formatRange(
+                allProperties.map((p) => p.unit_price_rent),
+                "",
+              ) +
+              '</div><div class="stat-label">价格范围 (元/㎡/月)</div></div>',
+          ].join("");
+        }
+
+        function renderProjectCard(project) {
+          const units = project.units;
+          const areaRange = formatRange(
+            units.map((p) => p.area_m2),
+            "㎡",
+          );
+          const priceRange = formatRange(
+            units.map((p) => p.unit_price_rent),
+            "元/㎡/月",
+          );
+          return [
+            '<article class="project-card">',
+            '<h4 class="project-name">' + escapeHtml(project.name) + "</h4>",
+            '<div class="project-metrics">',
+            '<div class="project-metric"><span class="metric-label">面积</span><span class="metric-value">' +
+              areaRange +
+              "</span></div>",
+            '<div class="project-metric"><span class="metric-label">价格</span><span class="metric-value price">' +
+              priceRange +
+              "</span></div>",
+            '<div class="project-metric"><span class="metric-label">房源数量</span><span class="metric-value">' +
+              units.length +
+              "套</span></div>",
+            "</div>",
+            "</article>",
+          ].join("");
+        }
+
+        function renderSections(list) {
+          const sections = groupProjects(list);
+          if (!sections.length) {
+            return '<div class="empty-state">该区域暂无合作项目，可由龙溪企服继续匹配</div>';
+          }
+
+          return sections
+            .map((section) => {
+              const unitCount = section.projects.reduce(
+                (sum, project) => sum + project.units.length,
+                0,
+              );
+              return [
+                '<section class="district-section">',
+                '<div class="district-heading"><h3>' +
+                  escapeHtml(section.district) +
+                  '区</h3><span class="district-count">' +
+                  section.projects.length +
+                  "个项目 / " +
+                  unitCount +
+                  "套房源</span></div>",
+                '<div class="project-grid">' +
+                  section.projects.map(renderProjectCard).join("") +
+                  "</div>",
+                "</section>",
+              ].join("");
+            })
+            .join("");
+        }
+
+        function render(filter) {
+          const filtered =
+            filter === "all"
+              ? allProperties
+              : allProperties.filter((p) => p.district === filter);
+          grid.innerHTML = renderSections(filtered);
+        }
+
+        filterBtns.forEach((btn) => {
+          const count =
+            btn.dataset.filter === "all"
+              ? allProperties.length
+              : allProperties.filter((p) => p.district === btn.dataset.filter)
+                  .length;
+          btn.setAttribute(
+            "aria-label",
+            btn.textContent + "，" + count + "套房源",
+          );
+          btn.addEventListener("click", function () {
+            filterBtns.forEach((b) => b.classList.remove("active"));
+            this.classList.add("active");
+            render(this.dataset.filter);
+          });
+        });
+
+        renderStats();
+        render("all");
+      });
+    </script>
+    <script src="js/guide-static.js?v=20260804-layout1"></script>
+  </body>
+</html>
